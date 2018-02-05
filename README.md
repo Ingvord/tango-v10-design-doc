@@ -1,2 +1,2 @@
-# tango-v10-design-doc
+# Tango v10 Design Doc
 Design document for Tango v10
