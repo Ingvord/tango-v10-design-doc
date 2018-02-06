@@ -129,12 +129,42 @@ interface TangoDevice extends TangoTarget {
   Future<Collection<TangoCommand>> executeCommands(Collection<TangoCommand>) throws IOException;
 }
 
-interface TangoAttribute<?> extends TangoTarget {
+interface TangoAttribute<?> extends Configurable, TangoTarget  {
   Stream<?> readAsStream();
   Future<?> read();
+  ChangeEvent asChangeEvent();
+  PeriodicEvent asPeriodicEvent();
+  ArchiveEvent asArchiveEvent();
 }
 
 //etc
+
+//utility interfaces/mixins
+interface Subscriable {
+  void subscribe(Callback);
+}
+
+interface Configuration {
+  //anotation based implementations
+}
+
+interface Configurable {
+  void setConfiguration(Configuration);
+}
+
+interface ChangeEvent extends Configurable, Subscriable{
+  
+}
+
+interface PeriodicEvent extends Configurable, Subscriable{
+  
+}
+
+interface ArchiveEvent extends Configurable, Subscriable{
+  
+}
+
+
 
 ```
 
