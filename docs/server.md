@@ -96,6 +96,8 @@ interface TangoEventReceivedListener {
 //etc
 ```
 
+## TangoKernelComponent
+
 Each component receives TangoContext and DeviceContext during initialization:
 
 ```java
