@@ -1,5 +1,7 @@
 # Server side specific
 
+[TOC]
+
 ## Internal event bus
 
 Server side library is split into loosely coupled components. Each component interacts with others via internal event bus:
