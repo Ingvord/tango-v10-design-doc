@@ -6,4 +6,4 @@ This project is intended to define a design document for Tango v10. In this docu
 
 So in the end this document can be used as a refenrence API documentation and kernel developers guide.
 
-To read the latest build of the document please follow [this link](https://readthedocs.org/projects/tango-v10-design-doc/badge/?version=latest)
+To read the latest build of the document please follow [this link](http://tango-v10-design-doc.readthedocs.io/en/latest/?badge=latest)
