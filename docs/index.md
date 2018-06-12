@@ -1,3 +1,7 @@
+# Business goal
+
+...
+
 # Mission of this document
 
 To achieve the following quality attributes:
