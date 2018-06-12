@@ -1,3 +1,11 @@
+# Mission of this document
+
+To achieve the following quality attributes:
+
+1) Maintainability -- long term project, code readability and modifiability over optimization
+2) Availability (Fault tolerance) -- Tango is a framework used in critical environments - must foreseen errors, faults etc
+3) Extanability -- system must provide an easy way to extend itself to users aka plugins
+
 # Layered architecture
 1. Transport layer:
 
