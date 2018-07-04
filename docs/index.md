@@ -120,8 +120,11 @@ Either historically or intentionaly architecture was adapted for adding new func
 The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several imortant feaures that must be foreseen in Tango:
 
 1) self recoverage
+
 2) self monitoring
+
 3) minimal downtime
+
 
 Below is the short analysis of the current situation:
 
@@ -130,14 +133,19 @@ Below is the short analysis of the current situation:
 Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
 1) transparent reconnection
+
 2) device's state machine
+
 3) propagating errors to the client
+
 4) heartbeats in event system
 
 These features can be extended with:
 
 1) self monitoring - integrate heartbeat into protocol
+
 2) start-up health check
+
 3) implement errors self recovery (some of them)
 
 ## Conclusions
@@ -187,6 +195,9 @@ Event bus separates modules that produce data from modules that consumes data. T
 The system designed to run in multithreaded environment
 
 # Layered architecture
+
+![](images/layers.png)
+
 1. Transport layer:
 
 ```java
