@@ -186,12 +186,6 @@ We hope that this design document will help to look at the Tango kernel from ano
 
 Business goals and scenarios were not covered in details in this design documents.
 
-# Separation data production from data consuming
 
-Event bus separates modules that produce data from modules that consumes data. This is required by modifiability qa.
-
-# Concurrency
-
-The system designed to run in multithreaded environment
 
 
