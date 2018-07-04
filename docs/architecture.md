@@ -183,3 +183,11 @@ General purpose client library. Introduces even more high level API: AdminDevice
 5. TangoCompatibility layer
 
 Bridge to previous Tango version
+
+## Separation data production from data consuming
+
+Event bus separates modules that produce data from modules that consumes data. This is required by modifiability qa.
+
+## Concurrency
+
+The system designed to run in multithreaded environment
