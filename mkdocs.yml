@@ -6,5 +6,6 @@ theme: readthedocs
 
 pages:
 - Home: index.md
+- Architecture: architecture.md
 - Client side: client.md
 - Server side: server.md

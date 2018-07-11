@@ -6,19 +6,19 @@ The document refers to the Tango Kernel. And all the following will be mostly ab
 
 # Mission of this document
 
-Describe architecture from the kernel developer point of view.
+Describe architecture of the Tango Controls core from the kernel developer point of view.
 
 The ultimate goal of this document is to define a common language between developers with different backgrounds (Physics VS Software development). 
-Therefore improve future communication between them. Once such communication is established, the proposed design may be applied to the existing code base. This will dramatically improve code quality, resolve many current issues and also significantly simplify further bug fixing.
+Therefore, improve future communication between them. Once such communication is established, the proposed design may be applied to the existing code base. This will dramatically improve code quality, resolve many current issues and also significantly simplify further bug fixing.
 
-While this document describes the targeted architecture design for Tango we keep in mind current community needs and possible 
-difficulties that may occur if migration to this new architecture will be approved. 
+While this document describes the targeted architecture design for Tango core, we keep in mind current community needs and possible difficulties that may occur if migration to this new architecture will be approved. 
 
 This document is supllied with "skeletal" implementation sketch based on Java interfaces. The mentioned implementation 
-is inteded to demonstrate how new design will be implemented in Tango kernel library as well it will help to define a roadmap for Tango kernel refactoring. 
-And in the future will provide the basis for evolutionary refactoring of Tango.
+is inteded to demonstrate how the new design may be implemented in Tango kernel library as well it will help to define a roadmap for Tango kernel refactoring. And in the future will provide the basis for evolutionary refactoring of Tango Controls.
 
-The goal of the new achitecture is to decrease time to market and lower integration and maintain costs of the Tango Controls users. Finally it will greatly improve flexibility by reducing design and system complexity.
+The goal of the new achitecture is to decrease time to market and lower integration and maintain costs of the Tango Controls users. 
+
+Finally, it will greatly improve flexibility by reducing design and system complexity.
 
 
 
@@ -28,7 +28,9 @@ Make Tango Controls suitable for applying in Industry and in Commerce and make i
 
 ##  Stakeholders
 
-Kernel developers -- developers require well defined architectural structures and their relation ships
+The main idea of this document addresses the concerns of kernel developers. Though, we hope that it facilitates communication among other stakeholders (end users, project manages, maintainers).
+
+developers require well defined architectural structures and their relation ships
 
 ## Quality attributes
 
@@ -37,7 +39,9 @@ The next figure shows the [ISO/IEC FCD 25010](http://iso25000.com/index.php/en/i
 
 ![](images/IEC_FCD_25010_product_quality_standard.png)
 
-Currently Tango faces the following problems that prevent it from reaching its business goals:
+We must say that no list will ever be complete... (что-то да забудем, что-то невозможно будет реализовать из-за столкновения интересов)
+
+Currently Tango core faces the following problems that prevent it from reaching its business goals:
 
 1) Human resources which are allocated to development and improvement of the Tango core code are very limited.
 2) Current code base structure does not meet quality level of commercial/open source projects of a similar size
@@ -46,7 +50,7 @@ Currently Tango faces the following problems that prevent it from reaching its b
 5) dependency on specific versions of 3rd party libraries (CORBA, ZMQ) in a way that changing the version or a library almost impossible
 6) unclear ways of the interaction between components of the system
 
-To solve the above problems in this document we suggest to focus on the following quality attributes and redesign Tango kernel library accordingly.
+To solve the above problems we suggest to focus on the following quality attributes and redesign Tango kernel library accordingly(- ??????).
 
 Some of the quality attributes from above picture are naturally inherited from CORBA design i.e. Interoperability.
 
@@ -120,8 +124,11 @@ Either historically or intentionaly architecture was adapted for adding new func
 The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several imortant feaures that must be foreseen in Tango:
 
 1) self recoverage
+
 2) self monitoring
+
 3) minimal downtime
+
 
 Below is the short analysis of the current situation:
 
@@ -130,14 +137,19 @@ Below is the short analysis of the current situation:
 Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
 1) transparent reconnection
+
 2) device's state machine
+
 3) propagating errors to the client
+
 4) heartbeats in event system
 
 These features can be extended with:
 
 1) self monitoring - integrate heartbeat into protocol
+
 2) start-up health check
+
 3) implement errors self recovery (some of them)
 
 ## Conclusions
@@ -201,8 +213,6 @@ Implementation remarks:
 
 Skeletal implementation resides in org.tango.v10.protocol package
 
-Layer remarks:
-- adds Tango semantics to TangoTransport by implementing logic of transforming TangoRequest/TangoResponse to/from TangoMessage
 
 Implementation remarks:
 - validates Request/Response and throws TangoProtocolException if validations fails
