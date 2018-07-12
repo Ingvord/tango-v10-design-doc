@@ -19,6 +19,9 @@ Skeletal implementation resides in org.tango.v10.protocol package
 
 Implementation remarks:
 - validates Request/Response and throws TangoProtocolException if validations fails
+- How it is in EPICs https://epics.anl.gov/docs/APS2014/05-CA-Concepts.pdf
+
+
 
 3. TangoInterfaceLayer
 
