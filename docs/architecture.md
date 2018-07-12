@@ -2,6 +2,8 @@
 
 ![](images/layers.png)
 
+![](images/Tango_as_CC.png)
+
 1. Transport layer:
 
 Skeletal implementation resides in org.tango.v10.transport package
@@ -16,6 +18,7 @@ Implementation remarks:
 
 Skeletal implementation resides in org.tango.v10.protocol package
 
+![](images/server_start_block_sch.png)
 
 Implementation remarks:
 - validates Request/Response and throws TangoProtocolException if validations fails
