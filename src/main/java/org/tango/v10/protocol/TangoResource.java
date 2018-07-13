@@ -7,7 +7,7 @@ import java.net.URI;
  * @since 7/11/18
  */
 public interface TangoResource {
-    TangoProtocol getProtocol(ProtocolVersion version) throws UnsupportedProtocolVersion;
+    TangoProtocolBackend getProtocol(ProtocolVersion version) throws UnsupportedProtocolVersion;
     URI toURI();
     //TODO ???
     TangoRequest asTangoRequest();

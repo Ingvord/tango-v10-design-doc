@@ -1,6 +1,6 @@
 package org.tango.v10.api.server;
 
-import org.tango.v10.protocol.TangoProtocol;
+import org.tango.v10.protocol.TangoProtocolBackend;
 import org.tango.v10.server.InternalEventBus;
 
 /**
@@ -9,7 +9,7 @@ import org.tango.v10.server.InternalEventBus;
  */
 public interface TangoServerContext {
     InternalEventBus getEventBus();
-    TangoProtocol getProtocol();
+    TangoProtocolBackend getProtocol();
     //put
     //get
 }
