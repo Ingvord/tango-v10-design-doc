@@ -10,6 +10,6 @@ public interface TangoRequestBuilder {
     TangoRequestBuilder setProtocolVersion(ProtocolVersion version);
     TangoRequestBuilder setTarget(TangoResource resource);
     TangoRequestBuilder setSource(TangoResource resource);
-    TangoRequestBuilder setMessage(TangoMessage message);
+    TangoRequestBuilder addMessage(TangoMessage message);
     TangoRequest build();
 }

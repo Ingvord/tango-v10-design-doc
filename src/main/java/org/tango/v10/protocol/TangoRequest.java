@@ -11,12 +11,11 @@ import java.util.Collection;
  * @author ingvord
  * @since 7/11/18
  */
-public interface TangoRequest extends TangoMessage {
+public interface TangoRequest extends TangoPackage {
 
-    interface ReadAttributes extends TangoRequest {
-         void setAttributesURI(Collection<URI> attrs);
-         void setAttributesValue(Collection<?> values);
-    }
+
+
+
 
     //etc
 }
