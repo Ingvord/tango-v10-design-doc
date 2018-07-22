@@ -35,6 +35,26 @@ The main idea of this document addresses the concerns of kernel developers. Thou
 
 developers require well defined architectural structures and their relation ships
 
+
+## Terminology and definitions
+
+To make our further discussions productive, we would like to define the key words from our point of view and show how we understand them. 
+
+If we look on the concepts of Tango we would draw in the head the following scheme (taken from Project Tango-Python at LIONS, iramis - CEA):
+
+![](images/Tango_schema_by_others.png)
+
+And this is how we think the Tango elements connects with each other in real live.
+
+![](images/Tango_schema_1.png)
+
+Each block is opened up as following:
+
+![](images/Tango_schema_2.png)
+
+So talking about improvements and refactoring we would consider _only_ what is marked as "Kernel library".
+
+
 ## Quality attributes
 
 Many factors determine the qualities in a system's archtecture.
