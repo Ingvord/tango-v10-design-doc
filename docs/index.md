@@ -44,7 +44,7 @@ If we look on the concepts of Tango we would draw in the head the following sche
 
 ![](images/Tango_schema_by_others.png)
 
-And this is how we think the Tango elements connects with each other in real live.
+And this is how we think the Tango elements connect with each other in real live.
 
 ![](images/Tango_schema_1.png)
 
