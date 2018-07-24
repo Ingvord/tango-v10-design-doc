@@ -44,15 +44,19 @@ If we look on the concepts of Tango we would draw in the head the following sche
 
 ![](images/Tango_schema_by_others.png)
 
-And this is how we think the Tango elements connect with each other in real live.
+And this is a high overview sketch of how we think the Tango elements connect with each other in real live.
 
 ![](images/Tango_schema_1.png)
 
-Each block is opened up as following:
+The same information presented in another way:
 
 ![](images/Tango_schema_2.png)
 
-So talking about improvements and refactoring we would consider _only_ what is marked as "Kernel library".
+Each block is opened up as following:
+
+![](images/Tango_schema_3.png)
+
+So talking about improvements and refactoring we would consider _only_ what is marked as "Core library".
 
 
 ## Quality attributes
