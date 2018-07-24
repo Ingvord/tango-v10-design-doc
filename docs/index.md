@@ -59,6 +59,25 @@ Each block is opened up as following:
 So talking about improvements and refactoring we would consider _only_ what is marked as "Core library".
 
 
+
+
+## Preface
+
+In this part you will find what to expect from this document and in which way information and ideas will be presented.
+
+
+* At the moment users have to write .... We want to reduce user's operations and propose to do something like that:
+
+![](images/UsersCode_toCoreLib.png)
+
+This ideas will be presented in more details in the part N **TODO**
+
+
+Protocols
+
+
+
+
 ## Quality attributes
 
 Many factors determine the qualities in a system's archtecture.
