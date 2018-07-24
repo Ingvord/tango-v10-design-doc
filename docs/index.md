@@ -65,8 +65,11 @@ So talking about improvements and refactoring we would consider _only_ what is m
 
 In this part you will find what to expect from this document and in which way information and ideas will be presented.
 
+First of all, please, read Terminology and definitions part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
 
-* At the moment users have to write .... We want to reduce user's operations and propose to do something like that:
+We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think that are lacking are in the Quality attributes part. Of course, we didn't forget about others and kept them in mind while working on this document.
+
+Block schemes and diagrams are used to present information.
 
 ![](images/UsersCode_toCoreLib.png)
 
