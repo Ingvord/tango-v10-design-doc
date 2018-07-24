@@ -70,7 +70,7 @@ In this part you will find what to expect from this document and in which way in
 
 ![](images/UsersCode_toCoreLib.png)
 
-This ideas will be presented in more details in the part N **TODO**
+These ideas will be presented in more details in the part N **TODO**
 
 
 Protocols
