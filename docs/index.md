@@ -1,25 +1,20 @@
 https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 
-## Preface
-
-The document refers to the Tango Kernel. And all the following will be mostly about it.
-
-
-
 # Mission of this document
+
 
 Describe architecture of the Tango Controls core from the kernel developer point of view.
 
 The ultimate goal of this document is to define a common language between developers with different backgrounds (Physics VS Software development). 
 Therefore, improve future communication between them. Once such communication is established, the proposed design may be applied to the existing code base. This will dramatically improve code quality, resolve many current issues and also significantly simplify further bug fixing.
 
-While this document describes the targeted architecture design for Tango core, we keep in mind current community needs and possible difficulties that may occur if migration to this new architecture will be approved. 
+While this document describes the targeted architecture design for Tango core, we keep in mind current community needs and possible difficulties that may occur if migration to this new architecture will be approved.
 
-This document is supllied with "skeletal" implementation sketch based on Java interfaces. The mentioned implementation 
-is inteded to demonstrate how the new design may be implemented in Tango kernel library as well it will help to define a roadmap for Tango kernel refactoring. And in the future will provide the basis for evolutionary refactoring of Tango Controls.
+This document is supplied with "skeletal" implementation sketch based on Java interfaces. The mentioned implementation 
+is intended to demonstrate how the new design may be implemented in Tango kernel library as well it will help to define a roadmap for Tango kernel refactoring. And in the future will provide the basis for evolutionary refactoring of Tango Controls.
 
-The goal of the new achitecture is to decrease time to market and lower integration and maintain costs of the Tango Controls users. 
+The goal of the new architecture is to decrease time to market and lower integration and maintain costs of the Tango Controls users.
 
 Finally, it will greatly improve flexibility by reducing design and system complexity.
 
@@ -83,7 +78,7 @@ Protocols
 
 ## Quality attributes
 
-Many factors determine the qualities in a system's archtecture.
+Many factors determine the qualities in a system's architecture.
 The next figure shows the [ISO/IEC FCD 25010](http://iso25000.com/index.php/en/iso-25000-standards/iso-25010) product quality standard. This quality model determines which quality characteristics should be taken into account when evaluating the properties of a software product.
 
 ![](images/IEC_FCD_25010_product_quality_standard.png)
@@ -113,7 +108,7 @@ The following quality attributes must be focused:
 
 Maintainability
 
-Tango is a long term project therefore code readability and its modifiability must prevail over non-trivial code optimizations. Due to the fast progress in the IT nowdays optimizations may decrease performance tomorrow i.e. consider new CPU commands and built-in compiler optimizations.
+Tango is a long term project therefore code readability and its modifiability must prevail over non-trivial code optimizations. Due to the fast progress in the IT nowadays optimizations may decrease performance tomorrow i.e. consider new CPU commands and built-in compiler optimizations.
 
 - Modifiability (the most important)
 - Modularity (guarantees Modifiability)
@@ -157,20 +152,19 @@ Most important quality attribute within **Maintainability** group is **Modifiabi
 Currently it is relatively easy to add new functionality i.e. extendability. For instance, to add a new command to a database server:
 1) update IDL
 2) implement some glue code on client/server side:
-  - on the client side this usually means adding a new method to DeviceProxy
-  - on the server - implement command and glue it to TangoDatabse device server API
-  
-very hard to change existing functionality i.e. patches, changes to protocol (send new data as command response). Or to extand core functionality e.g. integration with dbus.
+- on the client side this usually means adding a new method to DeviceProxy
+- on the server - implement command and glue it to TangoDatabse device server API
+
+very hard to change existing functionality i.e. patches, changes to protocol (send new data as command response). Or to expand core functionality e.g. integration with dbus.
 
 Impossible to change underlying protocol - currently is bound to CORBA
 
 ## Conclusions
 
-Either historically or intentionaly architecture was adapted for adding new functionality. Nowdays when functionality is mature enough (it is hard to foreseen any major additons like event system or new polling mechanism) focus must be switched to changes to the existing code base ot allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing kernel library
+Either historically or intentionally architecture was adapted for adding new functionality. Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism) focus must be switched to changes to the existing code base or allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing kernel library
+# Reliability in Tango
 
-# Reliability  in Tango
-
-The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several imortant feaures that must be foreseen in Tango:
+The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several important features that must be foreseen in Tango:
 
 1) self recoverage
 
@@ -180,6 +174,9 @@ The most important feature of availability must be fault tolerance as Tango perf
 
 
 Below is the short analysis of the current situation:
+
+
+
 
 ## Fault tolerance in Tango
 
@@ -211,7 +208,7 @@ As Tango aims to be installed in a variety of environments it is essential to hi
 
 ## Extendability in Tango
 
-Impossible to extend current kernel library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality. Which is sometimes not so effecient nor enough.
+Impossible to extend current kernel library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality. Which is sometimes not so efficient nor enough.
 
 ## Conclusions
 
@@ -229,11 +226,11 @@ a first perspective of how to improve the pitfalls while maintaining the advanta
 
 We have looked at Tango core code from the different points of view:
 - from a set of different quality attributes,
-- different architectrual views,
+- different architectural views,
 - stakeholder for a System and their interests.
-And propose some ideas and thoughts of how this or that viewpoint can be applaid in Tango.
+And propose some ideas and thoughts of how this or that viewpoint can be applied in Tango.
 
-These views were discribed in diffenets chaptars and have examples both in "interface" presentation  and writen ones to have thigh level overview.
+These views were described in different chapters and have examples both in "interface" presentation  and written ones to have thigh level overview.
 
 We hope that this design document will help to look at the Tango kernel from another point of view and changes the attitude to development and adding new features.
 
