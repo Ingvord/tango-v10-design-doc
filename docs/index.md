@@ -117,7 +117,7 @@ Tango is a framework used in critical environments (non stop operations, minimal
 - Fault tolerance (the system should recover itself)
 - Recoverability (...)
 
-_Performance _
+_Performance_
 
 We must also test what developers of device servers write.
 
@@ -144,27 +144,29 @@ _Functional suitability_
 
 
 
-
-
-
-
 # Maintainability in Tango
 
-Most important quality attribute within **Maintainability** group is **Modifiability**. Below is a short analysis of the current situation:
+Most important quality attribute within Maintainability group is _Modifiability_. 
 
 Currently it is relatively easy to add new functionality i.e. extendability. For instance, to add a new command to a database server:
-1) update IDL
-2) implement some glue code on client/server side:
-- on the client side this usually means adding a new method to DeviceProxy
-- on the server - implement command and glue it to TangoDatabse device server API
 
-very hard to change existing functionality i.e. patches, changes to protocol (send new data as command response). Or to expand core functionality e.g. integration with dbus.
+1) update IDL
+
+2) implement some glue code on client/server side:
+
+- on the client side: this usually means adding a new method to DeviceProxy
+
+- on the server: implement command and glue it to TangoDatabse device server API
+
+But it is very hard to change existing functionality i.e. patches, changes to protocol (send new data as command response). Or to expand core functionality e.g. integration with dbus.
 
 Impossible to change underlying protocol - currently is bound to CORBA
 
-## Conclusions
+**Conclusions**
 
-Either historically or intentionally architecture was adapted for adding new functionality. Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism) focus must be switched to changes to the existing code base or allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing kernel library
+Either historically or intentionally architecture was adapted for adding new functionality. Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism) focus must be switched to changes to the existing code base or allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing core library.
+
+
 # Reliability in Tango
 
 The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several important features that must be foreseen in Tango:
@@ -176,12 +178,7 @@ The most important feature of availability must be fault tolerance as Tango perf
 3) minimal downtime
 
 
-Below is the short analysis of the current situation:
-
-
-
-
-## Fault tolerance in Tango
+### Fault tolerance in Tango
 
 Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
@@ -201,21 +198,24 @@ These features can be extended with:
 
 3) implement errors self recovery (some of them)
 
-## Conclusions
+**Conclusions**
 
 Fault tolerance is already implemented quite well, but can be improved.
 
-# Adaptability   in Tango
 
-As Tango aims to be installed in a variety of environments it is essential to highlight **adaptability** quality attribute.  Most important is to provide extendability implemented in the kernel library. Below is the short description of the current situation.
+# Adaptability in Tango
 
-## Extendability in Tango
+As Tango aims to be installed in a variety of environments it is essential to highlight _adaptability_ quality attribute.
 
-Impossible to extend current kernel library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality. Which is sometimes not so efficient nor enough.
+The most important is to provide extendability implemented in the core library. Below is the short description of the current situation.
 
-## Conclusions
+### Extendability in Tango
 
-Extendability of the kernel library must be designed from scratch.
+It is impossible to extend current core library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality (which is sometimes not so efficient nor enough).
+
+**Conclusions**
+
+Extendability of the core library must be designed from scratch.
 
 # Summary
                                                                                                    
@@ -228,16 +228,18 @@ The main idea of this design document was to reveal drawbacks and benefits of th
 a first perspective of how to improve the pitfalls while maintaining the advantages.
 
 We have looked at Tango core code from the different points of view:
+
 - from a set of different quality attributes,
+
 - different architectural views,
+
 - stakeholder for a System and their interests.
-And propose some ideas and thoughts of how this or that viewpoint can be applied in Tango.
 
-These views were described in different chapters and have examples both in "interface" presentation  and written ones to have thigh level overview.
+And propose some ideas and thoughts of how this or that viewpoint can be applied in Tango. These views were described in chapters and have examples block schemes and in "interface" presentation to have thigh level overview.
 
-We hope that this design document will help to look at the Tango kernel from another point of view and changes the attitude to development and adding new features.
+We hope that this design document will help to look at the Tango kernel from another point of view and to change the attitude to development and adding new features.
 
-Business goals and scenarios were not covered in details in this design documents.
+Business goals and scenarios were not covered in details in this document.
 
 
 
