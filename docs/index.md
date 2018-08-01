@@ -1,5 +1,52 @@
 https://www.tutorialspoint.com/software_architecture_design/index.htm
 
+# Workflow
+
+Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main problem was that we started to express our ideas in the wrong way and didn't clearly understand how to merge our views with the views of Tango Controls needs and demands (perhaps, we also didn't understand them correctly).
+
+We started to investigate the code from the point of quality attributes. The idea was to analyze the existing Tango Controls core library, gather all the existing features there and then write a sketch of a new architecture having all these existing features. This new architecture was planned to improve maintainability, reliability, adaptability, etc. Afterwards, we wanted to discuss the new architecture with Tango Controls developers, make improvements and build a plan of how to implement the improved architecture having the what we have now.
+
+We spent about 7 days in discussions about which of quality attributes are the most important to reach the business goals and which of them we have already had and which we have to improve. We also wrote a plan of what to do next. But then we decided to ask kernel developers to fill the form with quality attributes and give their view of the percentage of each of the quality attribute regarding the existing kernel code. We had an idea to get the extremum values of quality attributes so that not to miss the existing while refactoring and to improve those are missing.
+
+And here we met the problems. 
+
+1) We had different views of what to call “kernel”, what to call “core”.
+
+2) Our idea of writing a new architecture first and then thinking about further steps was not accepted.
+
+So we had to review our work on this document.
+
+First, we included terminology and definitions part and gave our view of what we call “Kernel”, “Core”, etc.
+Second, we gave up the idea of writing a sketch of a new architecture of core library. 
+
+We ended up with the following.
+
+1) Take a part from the existing core code;
+
+2) Make a block scheme/sketch of it;
+
+3) Write a new block scheme which aims to simplify the existing core code and increase the value of quality attributes;
+
+4) Present “skeletal” implementation sketches based on Java interfaces.
+
+
+This should give us the next benefits:
+- We will have a documentation for the existing core code.
+
+- It is easier to review small parts.
+
+- This should make further discussions shorter and more productive.
+
+- You can start refactoring without “waiting” other parts to be reviewed.
+
+We also have in plan to extend the existing protocol. The following flowchart shows the idea of the changes which will be presented in more details later in this document.
+
+![](images/UsersCode_toCoreLib.png)
+
+
+
+
+
 
 # Mission of this document
 
@@ -17,18 +64,18 @@ Finally, it will greatly improve flexibility by reducing design and system compl
 
 
 
-## Business goal
+### Business goal
 
 Make Tango Controls suitable for applying in Industry and in Commerce and make it de facto a standard framework for Industry 4.0. Guarantee sustainable existence for the next 15-20 years.
 
-##  Stakeholders
+###  Stakeholders
 
 The main idea of this document addresses the concerns of kernel developers. Developers require well defined architectural structures and their relationships. Though, we hope that it facilitates communication among other stakeholders (e.g. end users, project manages, maintainers).
 
 
 
 
-## Terminology and definitions
+# Terminology and definitions
 
 To make our further discussions productive, we would like to define the key words from our point of view and show how we understand them. 
 
@@ -53,7 +100,7 @@ So talking about improvements and refactoring in this document we consider _only
 
 
 
-## Preface
+# Preface
 
 In this part you will find what to expect from this document and in which way information and ideas will be presented.
 
@@ -61,16 +108,16 @@ First of all, please, read _Terminology and definitions_ part to find out what w
 
 We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think are lacking are in the Quality attributes part. Of course, we were keeping in mind other quality attributes while working on this document.
 
+We have taken some parts of the existing core library to make analysis and further discussions easier. 
+
 Block schemes and diagrams are used to present information.
 
-The following flowchart shows the idea of proposed changes which will be presented in more details in the part N **TODO**
-
-![](images/UsersCode_toCoreLib.png)
 
 
 
 
-## Quality attributes
+
+# Quality attributes
 
 Many factors determine the qualities in a system's architecture.
 The next figure shows the [ISO/IEC FCD 25010](http://iso25000.com/index.php/en/iso-25000-standards/iso-25010) product quality standard. This quality model determines which quality characteristics should be taken into account when evaluating the properties of a software product.
