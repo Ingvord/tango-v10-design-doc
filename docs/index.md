@@ -4,17 +4,14 @@ https://www.tutorialspoint.com/software_architecture_design/index.htm
 # Mission of this document
 
 
-Describe architecture of the Tango Controls core from the kernel developer point of view.
-
 The ultimate goal of this document is to define a common language between developers with different backgrounds (Physics VS Software development). 
-Therefore, improve future communication between them. Once such communication is established, the proposed design may be applied to the existing code base. This will dramatically improve code quality, resolve many current issues and also significantly simplify further bug fixing.
+Therefore, improve future communication between them. This will dramatically improve code quality, resolve many current issues and also significantly simplify further bug fixing.
 
 While this document describes the targeted architecture design for Tango core, we keep in mind current community needs and possible difficulties that may occur if migration to this new architecture will be approved.
 
-This document is supplied with "skeletal" implementation sketch based on Java interfaces. The mentioned implementation 
-is intended to demonstrate how the new design may be implemented in Tango kernel library as well it will help to define a roadmap for Tango kernel refactoring. And in the future will provide the basis for evolutionary refactoring of Tango Controls.
+This document is supplied with flowcharts and "skeletal" implementation sketches based on Java interfaces. These are intended to demonstrate how the new design may be implemented in Tango core library as well it will help to define a roadmap for Tango kernel refactoring. And in the future it is supposed to provide the basis for evolutionary refactoring of Tango Controls.
 
-The goal of the new architecture is to decrease time to market and lower integration and maintain costs of the Tango Controls users.
+The goal is to decrease time to market and lower integration and maintain costs of the Tango Controls users.
 
 Finally, it will greatly improve flexibility by reducing design and system complexity.
 
@@ -26,20 +23,20 @@ Make Tango Controls suitable for applying in Industry and in Commerce and make i
 
 ##  Stakeholders
 
-The main idea of this document addresses the concerns of kernel developers. Though, we hope that it facilitates communication among other stakeholders (end users, project manages, maintainers).
+The main idea of this document addresses the concerns of kernel developers. Developers require well defined architectural structures and their relationships. Though, we hope that it facilitates communication among other stakeholders (e.g. end users, project manages, maintainers).
 
-developers require well defined architectural structures and their relation ships
+
 
 
 ## Terminology and definitions
 
 To make our further discussions productive, we would like to define the key words from our point of view and show how we understand them. 
 
-If we look on the concepts of Tango we would draw in the head the following scheme (taken from Project Tango-Python at LIONS, iramis - CEA):
+If we look through the concepts of Tango we will probably draw the following scheme (taken from Project Tango-Python at LIONS, iramis - CEA):
 
 ![](images/Tango_schema_by_others.png)
 
-And this is a high overview sketch of how we think the Tango elements connect with each other in real live.
+And this is a high overview sketch of how we think the Tango elements connect with each other.
 
 ![](images/Tango_schema_1.png)
 
@@ -51,7 +48,7 @@ Each block is opened up as following:
 
 ![](images/Tango_schema_3.png)
 
-So talking about improvements and refactoring we would consider _only_ what is marked as "Core library".
+So talking about improvements and refactoring in this document we consider _only_ what is marked as "Core library".
 
 
 
@@ -60,9 +57,9 @@ So talking about improvements and refactoring we would consider _only_ what is m
 
 In this part you will find what to expect from this document and in which way information and ideas will be presented.
 
-First of all, please, read Terminology and definitions part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
+First of all, please, read _Terminology and definitions_ part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
 
-We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think that are lacking are in the Quality attributes part. Of course, we didn't forget about others and kept them in mind while working on this document.
+We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think are lacking are in the Quality attributes part. Of course, we were keeping in mind other quality attributes while working on this document.
 
 Block schemes and diagrams are used to present information.
 
