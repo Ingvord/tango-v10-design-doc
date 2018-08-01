@@ -235,7 +235,7 @@ We have looked at Tango core code from the different points of view:
 
 - stakeholder for a System and their interests.
 
-And propose some ideas and thoughts of how this or that viewpoint can be applied in Tango. These views were described in chapters and have examples block schemes and in "interface" presentation to have thigh level overview.
+And propose some ideas and thoughts of how this or that viewpoint can be applied in Tango. These views were described in chapters and have examples in block schemes and in "interface" presentation to have thigh level overview.
 
 We hope that this design document will help to look at the Tango kernel from another point of view and to change the attitude to development and adding new features.
 
