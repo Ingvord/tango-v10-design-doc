@@ -1,6 +1,6 @@
 https://www.tutorialspoint.com/software_architecture_design/index.htm
 
-# Workflow
+# Introduction
 
 Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main problem was that we started to express our ideas in the wrong way and didn't clearly understand how to merge our views with the views of Tango Controls needs and demands (perhaps, we also didn't understand them correctly).
 
@@ -42,6 +42,28 @@ This should give us the next benefits:
 We also have in plan to extend the existing protocol. The following flowchart shows the idea of the changes which will be presented in more details later in this document.
 
 ![](images/UsersCode_toCoreLib.png)
+
+
+
+
+
+
+
+# Preface
+
+In this part you will find what to expect from this document and in which way information and ideas will be presented.
+
+First of all, please, read _Terminology and definitions_ part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
+
+We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think are lacking are in the Quality attributes part. Of course, we were keeping in mind other quality attributes while working on this document.
+
+We have taken some parts of the existing core library to make analysis and further discussions easier. 
+
+Block schemes and diagrams are used to present information.
+
+
+
+
 
 
 
@@ -96,23 +118,6 @@ Each block is opened up as following:
 ![](images/Tango_schema_3.png)
 
 So talking about improvements and refactoring in this document we consider _only_ what is marked as "Core library".
-
-
-
-
-# Preface
-
-In this part you will find what to expect from this document and in which way information and ideas will be presented.
-
-First of all, please, read _Terminology and definitions_ part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
-
-We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think are lacking are in the Quality attributes part. Of course, we were keeping in mind other quality attributes while working on this document.
-
-We have taken some parts of the existing core library to make analysis and further discussions easier. 
-
-Block schemes and diagrams are used to present information.
-
-
 
 
 
