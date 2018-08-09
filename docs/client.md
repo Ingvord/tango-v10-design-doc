@@ -67,6 +67,10 @@ In this section an analysis of the existing cide base related to Tango Event Sys
 
 ![](images/EventConsumer_connect_event_system.png) 
 
+## Event reconnect
+
+
+
 ## Conclusions
 
 Currently event subscription algorithm on the client side is strictly procedural. Basically all the code is located in EventConsumer::connect_event method.
