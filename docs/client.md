@@ -81,5 +81,6 @@ There are several severe problems with the existing code base:
  2) logic hard to read and maintain due to a lot of similar but quite different code; a lot of nested if/else statements; a lot of if-without-else statements etc
  3) code duplications - full event name is built several times
  4) there is no clear API for event subscription algorithm, basically there is only one method EventConsumer::connect_event which is impossible to unit test
+ 5) there is no clear bouundaries between low level and high level logic e.g. raw response from the admin server passed through all over the code base
 
 A PR has been created to address these issues and to propose refactoring: [link](https://github.com/tango-controls/cppTango/pull/470) 
