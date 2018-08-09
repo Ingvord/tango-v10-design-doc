@@ -69,7 +69,17 @@ In this section an analysis of the existing cide base related to Tango Event Sys
 
 ## Event reconnect
 
+Reconnection happens in KeepAliveThread after receiving a heartbeat event.
 
+![](images/Event_reconnect_event.png)
+
+![](images/Event_main_reconnect.png)
+
+![](images/Event_zmq_reconnect_channel.png)
+
+![](images/Event_zmq_reconnect_channel_1.png)
+
+![](images/Event_zmq_reconnect_event.png)
 
 ## Conclusions
 
