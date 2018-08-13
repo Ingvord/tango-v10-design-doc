@@ -2,6 +2,72 @@
 
 [TOC]
 
+# Existing codebase
+
+## Polling 
+
+### Polling framework classes
+
+![](images/Polling_classes.png)
+
+### PollingThread main loop
+
+![](images/Polling_loop_1.png)
+
+![](images/Polling_loop_2.png)
+
+![](images/Polling_loop_3.png)
+
+#### PollingThread::main_loop::execute_cmd
+
+![](images/Polling_execute_cmd.png)
+
+##### PollingThread::main_loop::execute_cmd::poll_add_obj
+
+![](images/Polling_poll_add_obj.png)
+
+##### PollingThread::main_loop::execute_cmd::update_period
+
+
+
+#### PollingThread::main_loop::one_more_poll
+
+![](images/Polling_one_more_poll.png)
+
+#####  PollingThread::main_loop::one_more_poll::poll_cmd
+
+![](images/Polling_poll_cmd.png)
+
+#####  PollingThread::main_loop::one_more_poll::poll_attr
+
+![](images/Polling_poll_attr.png)
+
+#####  PollingThread::main_loop::one_more_poll::eve_heartbeat
+
+![](images/Polling_heartbeat.png)
+
+#####  PollingThread::main_loop::one_more_poll::store_subdev
+
+![](images/Polling_store_subdev.png)
+
+
+
+#### PollingThread::main_loop::one_more_trig
+
+![](images/Polling_one_more_trig.png) 
+
+## Polling client: DServer
+
+### DServer::add_poll_obj
+
+![](images/Polling_DServer_add_poll_obj_1.png)
+
+![](images/Polling_DServer_add_poll_obj_2.png)
+
+# Proposed design
+
+Below are some ideas that are proposed by this document to be implemented in server side Tango v10 core library.
+
 ## Internal event bus
 
 Server side library is split into loosely coupled components. Each component interacts with others via internal event bus:
