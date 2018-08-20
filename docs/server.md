@@ -88,6 +88,10 @@ Separate "Control thread" and "Worker threads". Implement standalone queue for e
 
 ![](images/Polling_refactoring.png)
 
+New classes diagram:
+
+![](images/Package_polling.png)
+
 See [PR#472](https://github.com/tango-controls/cppTango/pull/472) for more details.
 
 
