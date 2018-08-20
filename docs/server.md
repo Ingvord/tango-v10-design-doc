@@ -64,7 +64,35 @@
 
 ![](images/Polling_DServer_add_poll_obj_2.png)
 
-# Proposed design
+## Conclusions
+
+Current code base tries to implement [Command pattern](https://en.wikipedia.org/wiki/Command_pattern) but fails to do so. Due to lack of OOP principles implemented (no polymorphism; complicated responsibilities structure etc).
+
+The following key features may be extracted from the code base:
+
+1) Heartbeat
+
+2) Thread control via shared command
+
+3) Attributes/Commands may be polled at different rate 
+
+4) Thread pool
+
+5) Values are stored in RingBuffer
+
+6) external trigger (??? need more info/use cases)  
+
+## Refactoring proposal
+
+Separate "Control thread" and "Worker threads". Implement standalone queue for execution tasks. "Control thread" will wake up at next execution time and submit the task to "Worker thread" via thread pool interface.
+
+![](images/Polling_refactoring.png)
+
+See [PR#472](https://github.com/tango-controls/cppTango/pull/472) for more details.
+
+
+
+# Tango V10 proposed design
 
 Below are some ideas that are proposed by this document to be implemented in server side Tango v10 core library.
 

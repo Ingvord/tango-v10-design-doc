@@ -10,6 +10,7 @@ import org.tango.v10.server.InternalEventBus;
 public interface TangoServerContext {
     InternalEventBus getEventBus();
     TangoProtocolBackend getProtocol();
+    TangoVersion getVersion();
     //put
     //get
 }
