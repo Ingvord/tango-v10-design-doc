@@ -296,5 +296,6 @@ We hope that this design document will help to look at the Tango kernel from ano
 Business goals and scenarios were not covered in details in this document.
 
 ОБОЗНАЧИТЬ ПУНКТЫ ДЛЯ ОБСУЖДЕНИЯ НА МИТИНГЕ.
-
+Высокоуровневая часть ок. Но если смотреть на детали, то не очень. Смотришь на блок схему, тоже не очень. Но сама реализация, например, со статическими методами зачем-то. 
+Часть можно вынести на уровень протокола, но реализованы в ядре(напрмиер, подписывание событий)
 
