@@ -49,7 +49,7 @@ We also have in plan to extend the existing protocol. The following flowchart sh
 
 
 
-# Preface
+## Preface
 
 In this part you will find what to expect from this document and in which way information and ideas will be presented.
 
@@ -70,7 +70,7 @@ Block schemes and diagrams are used to present information.
 
 
 
-# Mission of this document
+## Mission of this document
 
 
 The ultimate goal of this document is to define a common language between developers with different backgrounds (Physics VS Software development). 
@@ -198,7 +198,7 @@ _Functional suitability_
 
 
 
-# Maintainability in Tango
+## Maintainability in Tango
 
 Most important quality attribute within Maintainability group is _Modifiability_. 
 
@@ -221,7 +221,7 @@ Impossible to change underlying protocol - currently is bound to CORBA
 Either historically or intentionally architecture was adapted for adding new functionality. Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism) focus must be switched to changes to the existing code base or allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing core library.
 
 
-# Reliability in Tango
+## Reliability in Tango
 
 The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several important features that must be foreseen in Tango:
 
@@ -232,7 +232,7 @@ The most important feature of availability must be fault tolerance as Tango perf
 3) minimal downtime
 
 
-### Fault tolerance in Tango
+## Fault tolerance in Tango
 
 Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
@@ -257,13 +257,13 @@ These features can be extended with:
 Fault tolerance is already implemented quite well, but can be improved.
 
 
-# Adaptability in Tango
+## Adaptability in Tango
 
 As Tango aims to be installed in a variety of environments it is essential to highlight _adaptability_ quality attribute.
 
 The most important is to provide extendability implemented in the core library. Below is the short description of the current situation.
 
-### Extendability in Tango
+## Extendability in Tango
 
 It is impossible to extend current core library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality (which is sometimes not so efficient nor enough).
 
