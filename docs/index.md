@@ -198,7 +198,7 @@ _Functional suitability_
 
 
 
-## Maintainability in Tango
+### Maintainability in Tango
 
 Most important quality attribute within Maintainability group is _Modifiability_. 
 
@@ -221,7 +221,7 @@ Impossible to change underlying protocol - currently is bound to CORBA
 Either historically or intentionally architecture was adapted for adding new functionality. Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism) focus must be switched to changes to the existing code base or allow quick fixes, performance improvements and most importantly pluggability, so users can implement their own changes in a centralized manner without changing core library.
 
 
-## Reliability in Tango
+### Reliability in Tango
 
 The most important feature of availability must be fault tolerance as Tango performs in critical environments. Fault tolerance provides several important features that must be foreseen in Tango:
 
@@ -232,7 +232,7 @@ The most important feature of availability must be fault tolerance as Tango perf
 3) minimal downtime
 
 
-## Fault tolerance in Tango
+### Fault tolerance in Tango
 
 Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
@@ -257,19 +257,517 @@ These features can be extended with:
 Fault tolerance is already implemented quite well, but can be improved.
 
 
-## Adaptability in Tango
+### Adaptability in Tango
 
 As Tango aims to be installed in a variety of environments it is essential to highlight _adaptability_ quality attribute.
 
 The most important is to provide extendability implemented in the core library. Below is the short description of the current situation.
 
-## Extendability in Tango
+### Extendability in Tango
 
 It is impossible to extend current core library with a custom functionality. Tango may be extended via introduction of new Tango device servers, that may enrich Tango functionality (which is sometimes not so efficient nor enough).
 
 **Conclusions**
 
 Extendability of the core library must be designed from scratch.
+
+
+
+
+
+
+
+# Layered architecture
+
+![](images/layers.png)
+
+![](images/Tango_as_CC.png)
+
+1. Transport layer:
+
+Skeletal implementation resides in org.tango.v10.transport package
+
+Layer remarks:
+- low level basic layer
+
+Implementation remarks:
+- transparent reconnection
+
+2. Protocol layer:
+
+Skeletal implementation resides in org.tango.v10.protocol package
+
+![](images/server_start_block_sch.png)
+
+
+![](images/sequence_diagr_server_start.png)
+
+Implementation remarks:
+- validates Request/Response and throws TangoProtocolException if validations fails
+- How it is in EPICs https://epics.anl.gov/docs/APS2014/05-CA-Concepts.pdf
+
+
+
+3. TangoInterfaceLayer
+
+Skeletal implementation resides in org.tango.v10.service package  (interface can not be used as package name)
+
+```java
+
+//etc
+
+//utility interfaces/mixins
+interface Subscriable {
+  void subscribe(Callback);
+}
+
+interface Configuration {
+  //anotation based implementations
+}
+
+interface Configurable {
+  void setConfiguration(Configuration);
+}
+
+interface ChangeEvent extends Configurable, Subscriable{
+  
+}
+
+interface PeriodicEvent extends Configurable, Subscriable{
+  
+}
+
+interface ArchiveEvent extends Configurable, Subscriable{
+  
+}
+```
+
+Layer remarks:
+- adds Tango interface semantics to TangoProtocol layer by introducing high level abstractions (Host, Device etc)
+- TangoTarget is an interface from lower layer
+
+
+4. TangoLogicLayer (Client)
+
+General purpose client library. Introduces even more high level API: AdminDevice; DataBase etc
+
+Skeletal implementation resides in org.tango.v10.client package
+
+5. TangoLogicLayer (Server)
+
+Skeletal implementation resides in org.tango.v10.server package
+
+6. Tango API layer (client/server)
+
+Skeletal implementation resides in org.tango.v10.api.client/server package
+
+7. TangoCompatibility layer
+
+Bridge to previous Tango version
+
+## General remarks
+
+### Separation data production from data consuming
+ 
+Event bus separates modules that produce data from modules that consumes data. This is required by modifiability qa.
+
+### Concurrency
+
+The system designed to run in multithreaded environment
+
+
+
+
+
+
+
+# Client side specific
+
+```java
+interface TangoHost {
+   String getHostName();
+   String getIP();
+   int getPort();
+}
+
+interface TangoDeviceName {
+  /**
+   * @return fullName + modifiers e.g. tango:<udp>://<tangohost>:<tangoport>/<domain>/<family>/<member>?no_db=true
+   */
+  String getRawName();
+  /**
+   * @return full name e.g. tango:<udp>://<tangohost>:<tangoport>/<domain>/<family>/<member>
+   */
+  String getFullName();
+  String getProtocol();
+  TangoHost getTangoHost();
+  String getName();
+  MultiMap<String,String> getModifiers();
+}
+```
+
+## Event System
+
+In this section an analysis of the existing cide base related to Tango Event System (9.3.x). Exisiting code base is presented in blockscheme diagrams. These blockscheme diagrams are close to actual code i.e. only a very few very low level detailes are omitted.
+
+### Event System classes
+
+![](images/EventSystem_classes_EventConsumer.png)
+
+![](images/EventSystem_classes_EventChannel.png)
+
+![](images/EventSystem_classes_EventCallback.png)
+
+![](images/EventSystem_classes_NotConnectedEvent.png)
+
+## Event subscription
+
+### AttrProxy::subscribe_event
+
+![](images/AttrProxy_subscribe_event.png)
+
+### EventConsumer::subscribe_event
+
+![](images/EventConsumer_subscribe_event.png)
+
+### EventConsumer::connect_event
+
+![](images/EventConsumer_connect_event.png)
+
+![](images/EventConsumer_connect_event_1.png)
+
+![](images/EventConsumer_connect_event_3.png)
+
+### ZmqEventConsumer::zmq_specific
+
+![](images/EventConsumer_zmq_specific.png)
+
+### ZmqEventConsumer::connect_event_channel
+
+![](images/EventConsumer_connect_event_channel.png)
+
+### ZmqEventConsumer::connect_event_system
+
+![](images/EventConsumer_connect_event_system.png) 
+
+## Event reconnect
+
+Reconnection happens in KeepAliveThread after receiving a heartbeat event.
+
+![](images/Event_reconnect_event.png)
+
+![](images/Event_main_reconnect.png)
+
+![](images/Event_zmq_reconnect_channel.png)
+
+![](images/Event_zmq_reconnect_channel_1.png)
+
+![](images/Event_zmq_reconnect_event.png)
+
+## Conclusions
+
+Currently event subscription algorithm on the client side is strictly procedural. Basically all the code is located in EventConsumer::connect_event method.
+
+There are several severe problems with the existing code base:
+ 
+ 1) does not follow OOP principles. Event worse existing class structure makes it up side down - Channel and Callback structures inherit from more specific Zmq and Base (Notifd???) structures
+ 2) logic hard to read and maintain due to a lot of similar but quite different code; a lot of nested if/else statements; a lot of if-without-else statements etc
+ 3) code duplications - full event name is built several times
+ 4) there is no clear API for event subscription algorithm, basically there is only one method EventConsumer::connect_event which is impossible to unit test
+ 5) there is no clear bouundaries between low level and high level logic e.g. raw response from the admin server passed through all over the code base
+
+A PR has been created to address these issues and to propose refactoring: [link](https://github.com/tango-controls/cppTango/pull/470) 
+
+
+
+
+
+
+# Server side specific
+
+[TOC]
+
+## Existing codebase
+
+## Polling 
+
+### Polling framework classes
+
+![](images/Polling_classes.png)
+
+### PollingThread main loop
+
+![](images/Polling_loop_1.png)
+
+![](images/Polling_loop_2.png)
+
+![](images/Polling_loop_3.png)
+
+#### PollingThread::main_loop::execute_cmd
+
+![](images/Polling_execute_cmd.png)
+
+##### PollingThread::main_loop::execute_cmd::poll_add_obj
+
+![](images/Polling_poll_add_obj.png)
+
+##### PollingThread::main_loop::execute_cmd::update_period
+
+
+#### PollingThread::main_loop::one_more_poll
+
+![](images/Polling_one_more_poll.png)
+
+#####  PollingThread::main_loop::one_more_poll::poll_cmd
+
+![](images/Polling_poll_cmd.png)
+
+#####  PollingThread::main_loop::one_more_poll::poll_attr
+
+![](images/Polling_poll_attr.png)
+
+#####  PollingThread::main_loop::one_more_poll::eve_heartbeat
+
+![](images/Polling_heartbeat.png)
+
+#####  PollingThread::main_loop::one_more_poll::store_subdev
+
+![](images/Polling_store_subdev.png)
+
+#### PollingThread::main_loop::one_more_trig
+
+![](images/Polling_one_more_trig.png) 
+
+
+
+### Polling client: DServer
+
+#### DServer::add_poll_obj
+
+![](images/Polling_DServer_add_poll_obj_1.png)
+
+![](images/Polling_DServer_add_poll_obj_2.png)
+
+## Conclusions
+
+Current code base tries to implement [Command pattern](https://en.wikipedia.org/wiki/Command_pattern) but fails to do so. Due to lack of OOP principles implemented (no polymorphism; complicated responsibilities structure etc).
+
+The following key features may be extracted from the code base:
+
+1) Heartbeat
+
+2) Thread control via shared command
+
+3) Attributes/Commands may be polled at different rate 
+
+4) Thread pool
+
+5) Values are stored in RingBuffer
+
+6) external trigger (??? need more info/use cases)  
+
+## Refactoring proposal
+
+Separate "Control thread" and "Worker threads". Implement standalone queue for execution tasks. "Control thread" will wake up at next execution time and submit the task to "Worker thread" via thread pool interface.
+
+![](images/Polling_refactoring.png)
+
+New classes diagram:
+
+![](images/Package_polling.png)
+
+See [PR#472](https://github.com/tango-controls/cppTango/pull/472) for more details.
+
+
+
+# Tango V10 proposed design
+
+Below are some ideas that are proposed by this document to be implemented in server side Tango v10 core library.
+
+## Internal event bus
+
+Server side library is split into loosely coupled components. Each component interacts with others via internal event bus:
+
+```java
+
+interface EventBus {
+    void subscribe(String event, Class<T> dataType);
+    
+    <T> void publish(String event, Message<T> message);//TODO runtime message type check
+} 
+
+interface Message<T> {
+    String getEventName();
+    T getEventData();    
+}
+
+interface EventBusListener {
+    void onBeforeEvent();
+        
+    void onEvent(Object message);
+    
+    void onError(Exception clause);
+    
+    void onAfterEvent();
+}
+
+```
+
+TangoEventBus extends EventBus by adding Tango specific server side events:
+
+```java
+
+interface AttributeRead<T extends TangoDeviceAttribute<V>, V extends TangoDataType> {
+    T getAttribute();
+    V getData();    
+}
+
+interface AttributeWrite<T extends TangoDeviceAttribute, V extends TangoDataType> {
+    T getAttribute();
+    V getData();    
+}
+
+interface CommandExecute<T extends TangoDeviceCommand<IN, OUT>, IN extends TangoDataType, OUT extends TangoDataType> {
+    T getCommand();
+    IN getInput();    
+    OUT getOutput();
+}
+
+interface TangoEventBus extends EventBus {
+    void attributeRead(Message<AttributeRead> data);
+    
+    void attributeWrite(Message<AttributeWrite> data);
+    
+    void commandExecute(Message<CommandExecute> data);
+    
+    void eventReceived(Message<TangoEvent> data);
+}
+
+interface TangoReadAttributeListener {
+    void onBeforeAttributeRead(Message<AttributeRead> data);
+    
+    void onAttributeRead(Message<AttributeRead> data);
+    
+    void onAfterAttributeRead(Message<AttributeRead> data);
+}
+
+interface TangoWriteAttributeListener {
+    void onBeforeAttributeWrite(Message<AttributeWrite> data);
+    
+    void onAttributeWrite(Message<AttributeWrite> data);
+    
+    void onAfterAttributeWrite(Message<AttributeWrite> data);
+}
+
+interface TangoExecuteCommandListener {
+    void onBeforeExecuteCommand(Message<CommandExecute> data);
+    
+    void onExecuteCommand(Message<CommandExecute> data);
+    
+    void onAfterExecuteCommand(Message<CommandExecute> data);
+}
+
+interface TangoEventReceivedListener {
+    void onBeforeEventReceived(Message<EventReceived> data);
+    
+    void onEventReceived(Message<EventReceived> data);
+    
+    void onAfterEventReceived(Message<EventReceived> data);
+}
+
+//etc
+```
+
+## TangoKernelComponent
+
+Each component receives TangoContext and DeviceContext during initialization:
+
+```java
+
+interface TangoKernelComponent {
+    void initialize(TangoContext tangoContext, DeviceContext context);
+}
+
+interface TangoWorkerComponent extends TangoKernelComponent {
+    void start();
+}
+
+``` 
+
+Typical TangoComponentImpl:
+
+```java
+
+class Foo implements TangoKernelComponent, TangoWriteAttributeListener {//TODO generics
+    //in Java this can be replaced with annotation type, i.e. @TangoComponent or @TangoWorkerComponent 
+    static {
+        TangoContext.registerComponent(Foo.class);
+    }
+
+    /**
+    * NOTE: in Java this can be replaced with DependencyInjection aka Guice 
+    */
+    @Override
+    void initialize(TangoContext tangoContext, DeviceContext context){
+        tangoContext.getEventBus().subscribe("org.tango.read_attribute");
+    }
+    
+    void onBeforeAttributeWrite(AttributeWrite<> message){//TODO generics
+        System.out.printf("Write %d into attribute %s ",message.getData(), message.getAttribute().getName());        
+    }
+}
+
+```
+
+## TangoEngineComponent
+
+Central component of the server side API is TangoEngineComponent. This component intiliazes all other components and performs 
+an orchestration of all components i.e. wraps TangoEventBus:
+
+```java
+
+interface TangoEngineComponent extends TangoComponent{
+    void start();
+}
+
+``` 
+
+Typical implementation:
+
+```java
+
+class TangoEngineComponentImpl implements TangoEngineComponent {
+    void initialize(TangoContext context, DeviceContext deviceContext){
+        context.getRegisteredComponents()
+            .forEach( (cmpt) -> System.out.println(cmpt.getClass().getSimpleName()));
+    }
+    
+    void start(){
+        context.getRegisteredWorkerComponents()
+            .forEach( (cmpt) -> cmpt.start());        
+    }
+}
+
+```
+
+## AttributeReadComponent
+
+## AttributeWriteComponent
+
+## EventSystemComponent
+
+## PollingComponent
+
+## LoggingComponent
+
+
+
+
+
+
+
+
+
 
 # Summary
                                                                                                    
