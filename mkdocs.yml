@@ -6,6 +6,6 @@ theme: readthedocs
 
 nav:
 - Home: 'index.md'
-  - Architecture: 'architecture.md'
-  - Client side: 'client.md'
-  - Server side: 'server.md'
+- Architecture: 'architecture.md'
+- Client side: 'client.md'
+- Server side: 'server.md'
