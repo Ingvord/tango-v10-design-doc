@@ -4,8 +4,8 @@ repo_url: https://github.com/ingvord/tango-v10-design-doc
 theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
 
-pages:
-- Home: index.md
-- Architecture: architecture.md
-- Client side: client.md
-- Server side: server.md
+nav:
+- 'Introduction': 'index.md'
+- 'Architecture': 'architecture.md'
+- 'Client side': 'client.md'
+- 'Server sid': 'server.md'
