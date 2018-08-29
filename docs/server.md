@@ -12,6 +12,8 @@
 
 ### PollingThread main loop
 
+pollthread.cpp
+
 ![](images/Polling_loop_1.png)
 
 ![](images/Polling_loop_2.png)
@@ -28,7 +30,7 @@
 
 ##### PollingThread::main_loop::execute_cmd::update_period
 
-
+![](images/Polling_update_period.png)
 
 #### PollingThread::main_loop::one_more_poll
 
