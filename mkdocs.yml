@@ -5,7 +5,7 @@ theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
 
 nav:
-- 'Introduction': 'index.md'
-- 'Architecture': 'architecture.md'
-- 'Client side': 'client.md'
-- 'Server sid': 'server.md'
+- Introduction: 'index.md'
+- Architecture: 'architecture.md'
+- Client side: 'client.md'
+- Server side: 'server.md'
