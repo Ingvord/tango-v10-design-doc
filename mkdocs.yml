@@ -1,8 +1,15 @@
 site_name: Tango V10 Design Document
 repo_url: https://github.com/ingvord/tango-v10-design-doc
 
-theme: readthedocs
+#theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
+
+theme:
+    name: mkdocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
 
 nav:
     - Home: index.md
