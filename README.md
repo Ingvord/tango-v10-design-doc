@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/tango-v10-design-doc/badge/?version=latest)](http://tango-v10-design-doc.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/tango-v10-design-doc/badge/?version=latest&style=plastic)](http://tango-v10-design-doc.readthedocs.io/en/latest/?badge=latest)
 
 # Tango v10 Design Doc
 
