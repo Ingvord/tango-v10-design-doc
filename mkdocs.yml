@@ -16,4 +16,5 @@ nav:
 - '9. Architecture': 'architecture.md'
 - '10. Client side': 'client.md'
 - '11. Server side': 'server.md'
-- '12. Summary': 'summary.md'
+- '12. Tango V10 design proposal': 'tango_v10.md'
+- '13. Summary': 'summary.md'
