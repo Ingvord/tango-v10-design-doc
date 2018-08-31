@@ -1,3 +1,5 @@
+[TOC]
+
 # Tango V10 Server side design proposal
 
 Below are some ideas that are proposed by this document to be implemented in server side Tango v10 core library.
