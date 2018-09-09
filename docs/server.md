@@ -16,7 +16,11 @@ pollthread.cpp
 
 ![](images/Polling_loop_1.png)
 
+---
+
 ![](images/Polling_loop_2.png)
+
+---
 
 ![](images/Polling_loop_3.png)
 
@@ -63,6 +67,8 @@ pollthread.cpp
 ### DServer::add_poll_obj
 
 ![](images/Polling_DServer_add_poll_obj_1.png)
+
+---
 
 ![](images/Polling_DServer_add_poll_obj_2.png)
 
