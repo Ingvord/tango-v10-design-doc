@@ -4,7 +4,7 @@ https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 # Introduction
 
-Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main problem was that we started to express our ideas in the wrong way and didn't clearly understand how to merge our views with the views of Tango Controls needs and demands (perhaps, we also didn't understand them correctly).
+Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main challenge was to express our ideas in the right way and to clearly understand how to merge our views with the views of Tango Controls needs and demands (to understand them correctly).
 
 We started to investigate the code from the point of quality attributes. The idea was to analyze the existing Tango Controls core library, gather all the existing features there and then write a sketch of a new architecture having all these existing features. This new architecture was planned to improve maintainability, reliability, adaptability, etc. Afterwards, we wanted to discuss the new architecture with Tango Controls developers, make improvements and build a plan of how to implement the improved architecture having the what we have now.
 
@@ -41,7 +41,7 @@ This should give us the next benefits:
 
 - You can start refactoring without “waiting” other parts to be reviewed.
 
-We also have in plan to extend the existing protocol. The following flowchart shows the idea of the changes which will be presented in more details later in this document.
+We also have in plan to extend the existing protocol. The following flowchart shows the idea of the changes which will be presented in more details in this document.
 
 ![](images/UsersCode_toCoreLib.png)
 
