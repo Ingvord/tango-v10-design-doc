@@ -33,6 +33,7 @@ We ended up with the following.
 
 
 This should give us the next benefits:
+
 - We will have a documentation for the existing core code.
 
 - It is easier to review small parts.
@@ -53,15 +54,19 @@ We also have in plan to extend the existing protocol. The following flowchart sh
 
 ## Preface
 
-In this part you will find what to expect from this document and in which way information and ideas will be presented.
+In this part you will find what to expect from this document and in which way information and ideas are presented.
 
 First of all, please, read _Terminology and definitions_ part to find out what we mean by "core library" as everything we are going to talk about further is going to be about "core library".
 
 We have decided to look at the Tango Controls form the perspective of quality attributes. The most important and those we think are lacking are in the Quality attributes part. Of course, we were keeping in mind other quality attributes while working on this document.
 
-We have taken some parts of the existing core library to make analysis and further discussions easier. 
+_Client_ and _Sever_ parts have logical diagrams of the parts of the existing code (event system, event subscription, event reconnect and polling). These diagrams don't show how the implementation was done but give a nice overview of what is happening. In these part you can also find refactoring proposals and links to corresponding pull requests in GitHub.
+
+_Tango v10_ part contains design proposals in Java interfaces. The idea to do that in interfaces was not spontaneous. If we begin to talk about Tango Controls concepts, missions and idea – they are all very important and up-to-date and really worth following. There is nothing to add more. But as soon as we look inside – code base and implementations – this is where the major work should be done.
 
 Block schemes and diagrams are used to present information.
+
+We hope that the taken parts of the existing core library will make further discussions and analysis easier. 
 
 
 
@@ -80,7 +85,7 @@ Therefore, improve future communication between them. This will dramatically imp
 
 While this document describes the targeted architecture design for Tango core, we keep in mind current community needs and possible difficulties that may occur if migration to this new architecture will be approved.
 
-This document is supplied with flowcharts and "skeletal" implementation sketches based on Java interfaces. These are intended to demonstrate how the new design may be implemented in Tango core library as well it will help to define a roadmap for Tango kernel refactoring. And in the future it is supposed to provide the basis for evolutionary refactoring of Tango Controls.
+This document is supplied with flowcharts and "skeletal" implementation sketches based on Java interfaces. These are intended to demonstrate how the new design may be implemented in Tango core library as well it may help to define a roadmap for Tango kernel refactoring. And in the future it is supposed to provide the basis for evolutionary refactoring of Tango Controls.
 
 The goal is to decrease time to market and lower integration and maintain costs of the Tango Controls users.
 
@@ -88,10 +93,10 @@ Finally, it will greatly improve flexibility by reducing design and system compl
 
 
 
-### Business goal
+## Business goal
 
 Make Tango Controls suitable for applying in Industry and in Commerce and make it de facto a standard framework for Industry 4.0. Guarantee sustainable existence for the next 15-20 years.
 
-###  Stakeholders
+##  Stakeholders
 
 The main idea of this document addresses the concerns of kernel developers. Developers require well defined architectural structures and their relationships. Though, we hope that it facilitates communication among other stakeholders (e.g. end users, project manages, maintainers).
