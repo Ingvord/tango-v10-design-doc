@@ -18,4 +18,4 @@ Each block is opened up as following:
 
 ![](images/Tango_schema_3.png)
 
-So talking about improvements and refactoring in this document we consider _only_ what is marked as "Core library".
+So talking about improvements and refactoring in this document we consider __only__ what is marked as "Core library".
