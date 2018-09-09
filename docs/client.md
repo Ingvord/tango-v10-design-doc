@@ -4,6 +4,8 @@
 
 In this section an analysis of the existing cide base related to Tango Event System (9.3.x). Exisiting code base is presented in blockscheme diagrams. These blockscheme diagrams are close to actual code i.e. only a very few very low level detailes are omitted.
 
+---
+
 ## Event System classes
 
 ![](images/EventSystem_classes_EventConsumer.png)
@@ -13,6 +15,8 @@ In this section an analysis of the existing cide base related to Tango Event Sys
 ![](images/EventSystem_classes_EventCallback.png)
 
 ![](images/EventSystem_classes_NotConnectedEvent.png)
+
+---
 
 ## Event subscription
 
@@ -44,6 +48,8 @@ In this section an analysis of the existing cide base related to Tango Event Sys
 
 ![](images/EventConsumer_connect_event_system.png) 
 
+---
+
 ## Event reconnect
 
 Reconnection happens in KeepAliveThread after receiving a heartbeat event.
@@ -57,6 +63,8 @@ Reconnection happens in KeepAliveThread after receiving a heartbeat event.
 ![](images/Event_zmq_reconnect_channel_1.png)
 
 ![](images/Event_zmq_reconnect_event.png)
+
+---
 
 ## Conclusions
 
