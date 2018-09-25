@@ -64,6 +64,18 @@ Reconnection happens in KeepAliveThread after receiving a heartbeat event.
 
 ![](images/Event_zmq_reconnect_event.png)
 
+## Event unsubscribe
+
+Entry point: EventConsumer::unsubscribe_event
+
+![](images/Event_unsubscribe_client.png)
+
+ZMQ specific:
+
+![](images/Event_unsubscribe_client_disconnect_event.png)
+
+![](images/Event_unsubscribe_client_disconnect_channel.png)
+
 ---
 
 ## Conclusions
