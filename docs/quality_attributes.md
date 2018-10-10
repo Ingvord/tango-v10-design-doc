@@ -11,11 +11,11 @@ Currently Tango core faces the following problems that prevent it from reaching 
 
 2) Current code base structure does not meet quality level of commercial/open source projects of a similar size
 
-3) Dependency on a legacy CORBA framework and most importantly Tango is a thin wrapper onto of CORBA
+3) Dependency on a legacy CORBA framework. And most importantly Tango is a thin wrapper on top of CORBA
 
 4) Parts of the Tango code violate principle of information hiding and separation of concerns
 
-5) Dependency on specific versions of 3rd party libraries (CORBA, ZMQ) in a way that changing the version or a library almost impossible
+5) Dependency on specific versions of 3rd party libraries (CORBA, ZMQ) in a way that changing the version or a library is almost impossible
 
 6) Unclear ways of the interaction between components of the system
 
@@ -23,13 +23,20 @@ To solve the above problems we suggest to focus on the following quality attribu
 
 Some of the quality attributes from the above picture are naturally inherited from CORBA design i.e. Interoperability.
 
-Below is a short analysis of the presence of particular attributes in Tango:
+Below is a short list of the presence of particular attributes in Tango:
 
-**TODO** define and describe presence of all other quality attributes in Tango (inherited from CORBA)
+**TODO** define and describe presence of quality attributes in Tango (incl. inherited from CORBA).
 
-The most important and those which Tango Controls mostly miss are the following.
+The most important and those which Tango Controls mostly miss are the following:
+
+- [Maintainability](maintainability.md)
+
+
 
 НАПИСАТЬ, ПРО КОРБУ. НАДО ПОНЯТЬ ИЗБАВЛЯТЬСЯ ОТ НЕЁ ИЛИ НЕТ. ЕСЛИ ДА, ТО КАКИЕ ПОСЛЕДСТВИЯ, ЕСЛИ НЕТ, ТО КАК МОЖНО ИЗМЕНИТЬ КОД ДЛЯ ЭТОГО.
+
+
+
 
 
 _Maintainability_
@@ -52,6 +59,9 @@ _Performance_
 We must also test what developers of device servers write.
 
 - Resource utilization (the library itself should not take much)
+
+No tests, benchmark tests (usecases, which machins)
+
 
 _Extensibility_ (like possibility to use maven. Use plugin-like model of development) 
 
