@@ -5,4 +5,4 @@ theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
 
 nav:
-  - 'Table of contents': index.md
+  - 'Table of contents': 'docs/index.md'
