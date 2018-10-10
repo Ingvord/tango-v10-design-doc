@@ -1,6 +1,6 @@
 # Layered architecture
 
-Below are the layers that should be designed and implemented in Tango core library:
+Below are the layers that should be designed and implemented in **Tango core library**:
 
 ![](images/layers.png)
 
@@ -32,8 +32,6 @@ Tango Transport layer implementation remarks:
 
 Skeletal implementation resides in org.tango.v10.protocol package
 
----
-
 We propose to design Tango protocol using block schemes as below and translate them in an API. If needed sequence diagrams can be used.
 
 Block scheme where server recieves configuration form Tango Host:
@@ -44,7 +42,7 @@ Sequence diagram where server recieves configuration form Tango Host:
 ![](images/sequence_diagr_server_start.png)
 
 
-Implementation remarks:
+Tango Protocol layer implementation remarks:
 
 - Tango Protocol layer validates Request/Response and throws TangoProtocolException if validations fails
 - How it is done in EPICs https://epics.anl.gov/docs/APS2014/05-CA-Concepts.pdf
@@ -91,30 +89,28 @@ Tango Interface layer remarks:
 - TangoTarget is an interface from lower layer
 
 
-4. TangoLogicLayer (Client)
+**4 Tango API layer (client/server)**
 
 General purpose client library. Introduces even more high level API: AdminDevice; DataBase etc
 
 Skeletal implementation resides in org.tango.v10.client package
 
-5. TangoLogicLayer (Server)
-
 Skeletal implementation resides in org.tango.v10.server package
-
-6. Tango API layer (client/server)
 
 Skeletal implementation resides in org.tango.v10.api.client/server package
 
-7. TangoCompatibility layer
 
-Bridge to previous Tango version
+**5 Tango Compatibility layer**
 
-# General remarks
+Bridge to previous Tango versions.
+
+
+# General remarks of a new Tango core library
 
 ## Separation data production from data consuming
  
-Event bus separates modules that produce data from modules that consumes data. This is required by modifiability qa.
+Event bus separates modules that produce data from modules that consume data. This is required by modifiability quality attribute.
 
 ## Concurrency
 
-The system designed to run in multithreaded environment
+The system should be designed to run in multithreaded environment.
