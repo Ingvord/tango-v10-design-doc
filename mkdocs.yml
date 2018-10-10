@@ -3,3 +3,6 @@ repo_url: https://github.com/ingvord/tango-v10-design-doc
 
 theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
+
+nav:
+  - 'Table of contents': index.md
