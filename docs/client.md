@@ -2,7 +2,7 @@
 
 # Event System
 
-Here you can find an analysis of the existing cide base related to the Tango Event System (9.3.x). Exisiting code base is presented in blockscheme diagrams. These blockscheme diagrams are close to actual code, i.e. only a very few very low level detailes are omitted.
+Here you can find an analysis of the existing code base related to the Tango Event System (9.3.x). Exisiting code base is presented in blockscheme diagrams. These blockscheme diagrams are close to actual code, i.e. only a very few very low level detailes are omitted.
 
 ---
 
@@ -94,4 +94,4 @@ There are several severe problems with the existing code base:
  
  5) There is no clear boundaries between low level and high level logic, e.g. raw response from the admin server passed through all over the code base.
 
-A PR has been created to address these issues and to propose refactoring: [link to GitHub].(https://github.com/tango-controls/cppTango/pull/470) 
+A PR has been created to address these issues and to propose refactoring: [link to GitHub](https://github.com/tango-controls/cppTango/pull/470).
