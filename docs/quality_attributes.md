@@ -27,53 +27,22 @@ Below is a short list of the presence of particular attributes in Tango:
 
 **TODO** define and describe presence of quality attributes in Tango (incl. inherited from CORBA).
 
+**TODO** 
+
+- Write about CORBA. 
+- Perhaps, take parts of CORBA which are mostly used and put it into kernel (make some parts of CORBA be Tango Controls).
+- Which benifits are we going to have? Which consequence this decision will make to the whole Tango community?
+- If it is decided to get rid of CORBA, what should be done? What influence will it have to Tango Controls?
+
+
+
 The most important and those which Tango Controls mostly miss are the following:
 
 - [Maintainability](maintainability.md)
+- [Reliability](reliability.md)
+- [Performance](performance.md)
+- [Extensibility](extendability.md)
+- [Portability](portability.md)
 
 
 
-НАПИСАТЬ, ПРО КОРБУ. НАДО ПОНЯТЬ ИЗБАВЛЯТЬСЯ ОТ НЕЁ ИЛИ НЕТ. ЕСЛИ ДА, ТО КАКИЕ ПОСЛЕДСТВИЯ, ЕСЛИ НЕТ, ТО КАК МОЖНО ИЗМЕНИТЬ КОД ДЛЯ ЭТОГО.
-
-
-
-
-
-_Maintainability_
-
-Tango is a long term project therefore code readability and its modifiability must prevail over non-trivial code optimizations. Due to the fast progress in the IT nowadays optimizations may decrease performance tomorrow i.e. consider new CPU commands and built-in compiler optimizations.
-
-- Modifiability (the most important)
-- Modularity (guarantees Modifiability)
-- Testability (as the result of Modularity)
-
-_Reliability_
-
-Tango is a framework used in critical environments (non stop operations, minimal downtime etc) therefore Tango kernel must foreseen errors, faults etc
-
-- Fault tolerance (the system should recover itself)
-- Recoverability (...)
-
-_Performance_
-
-We must also test what developers of device servers write.
-
-- Resource utilization (the library itself should not take much)
-
-No tests, benchmark tests (usecases, which machins)
-
-
-_Extensibility_ (like possibility to use maven. Use plugin-like model of development) 
-
-- Tango Controls must provide an easy way to extend itself to users aka plugins
-
-
-The following must be considerate during design but not the goal per se.
-
-_Portability_
-
-- Installability (there must be packaging)
-- Adaptability (like device catalogue)
-
-
-_Functional suitability_
