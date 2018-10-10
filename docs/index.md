@@ -2,7 +2,7 @@ https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 [TOC]
 
-# Introduction
+# Preface
 
 Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main challenge was to express our ideas in the right way and to clearly understand how to merge our views with the views of Tango Controls needs and demands (to understand them correctly).
 
@@ -52,7 +52,7 @@ We also have in plan to extend the existing protocol. The following flowchart sh
 
 
 
-## Preface
+## Introduction
 
 In this part you will find what to expect from this document and in which way information and ideas are presented.
 
