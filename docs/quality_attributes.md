@@ -38,11 +38,10 @@ Below is a short list of the presence of particular attributes in Tango:
 
 The most important and those which Tango Controls mostly miss are the following:
 
-- [Maintainability](maintainability.md)
-- [Reliability](reliability.md)
-- [Performance](performance.md)
-- [Extensibility](extendability.md)
+- [Maintainability](maintainability.md)    
+- [Reliability](reliability.md)   
+- [Fault tolerance](fault_tolerance.md)   
+- [Performance](performance.md) 
+- [Extendability](extendability.md) 
 - [Portability](portability.md)
-
-
-
+- [Adaptability](adaptability.md)
