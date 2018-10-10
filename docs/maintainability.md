@@ -1,5 +1,12 @@
 ### Maintainability in Tango
 
+Tango is a long term project therefore code readability and its modifiability must prevail over non-trivial code optimizations. Due to the fast progress in the IT nowadays optimizations may decrease performance tomorrow i.e. consider new CPU commands and built-in compiler optimizations.
+
+- Modifiability (the most important)
+- Modularity (guarantees Modifiability)
+- Testability (as the result of Modularity)
+
+
 Most important quality attribute within Maintainability group is _Modifiability_. 
 
 Currently it is relatively easy to add new functionality i.e. extendability. For instance, to add a new command to a database server:
