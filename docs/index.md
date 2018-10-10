@@ -1,4 +1,6 @@
 
+# Table of Contents
+
 ### [1. Introduction](introduction.md)
 
 ### [2. Terminology](terminology.md)
