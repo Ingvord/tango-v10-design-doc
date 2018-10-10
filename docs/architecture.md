@@ -1,37 +1,59 @@
 # Layered architecture
 
+Below are the layers that should be designed and implemented in Tango core library:
+
 ![](images/layers.png)
+
+---
+
+
+Design sketch of Tango component and connectors separated by layers:
 
 ![](images/Tango_as_CC.png)
 
-1. Transport layer:
+---
 
-Skeletal implementation resides in org.tango.v10.transport package
 
-Layer remarks:
-- low level basic layer
+**1 Tango Transport layer**
 
-Implementation remarks:
-- transparent reconnection
+Skeletal implementation resides in [org.tango.v10.transport](src/main/java/org/tango/v10/transport) package
 
-2. Protocol layer:
+Tango Transport layer remarks:
+
+- low level basic transport layer
+
+Tango Transport layer implementation remarks:
+
+- transparent reconnection;
+- session auto-close;
+- message delivery guarantee.
+
+**2 Tango Protocol layer**
 
 Skeletal implementation resides in org.tango.v10.protocol package
 
+---
+
+We propose to design Tango protocol using block schemes as below and translate them in an API. If needed sequence diagrams can be used.
+
+Block scheme where server recieves configuration form Tango Host:
+
 ![](images/server_start_block_sch.png)
 
-
+Sequence diagram where server recieves configuration form Tango Host:
 ![](images/sequence_diagr_server_start.png)
 
+
 Implementation remarks:
-- validates Request/Response and throws TangoProtocolException if validations fails
-- How it is in EPICs https://epics.anl.gov/docs/APS2014/05-CA-Concepts.pdf
+
+- Tango Protocol layer validates Request/Response and throws TangoProtocolException if validations fails
+- How it is done in EPICs https://epics.anl.gov/docs/APS2014/05-CA-Concepts.pdf
 
 
 
-3. TangoInterfaceLayer
+**3 Tango Interface layer**
 
-Skeletal implementation resides in org.tango.v10.service package  (interface can not be used as package name)
+Skeletal implementation resides in org.tango.v10.service package  ("service" word is used as "interface" can not be used as package name)
 
 ```java
 
@@ -63,8 +85,9 @@ interface ArchiveEvent extends Configurable, Subscriable{
 }
 ```
 
-Layer remarks:
-- adds Tango interface semantics to TangoProtocol layer by introducing high level abstractions (Host, Device etc)
+Tango Interface layer remarks:
+
+- adds Tango interface semantics to Tango Protocol layer by introducing high level abstractions (Host, Device etc);
 - TangoTarget is an interface from lower layer
 
 
