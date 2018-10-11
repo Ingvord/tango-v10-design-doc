@@ -16,7 +16,7 @@ Design sketch of Tango component and connectors separated by layers:
 
 **1 Tango Transport layer**
 
-Skeletal implementation resides in [org.tango.v10.transport](src/main/java/org/tango/v10/transport) package
+Skeletal implementation resides in [org.tango.v10.transport](#src/main/java/org/tango/v10/transport) package
 
 Tango Transport layer remarks:
 
