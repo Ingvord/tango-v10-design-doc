@@ -9,17 +9,17 @@ We have looked at Tango core code from the different points of view:
 - architectural view;
 - design and implementaion view.
 
-We propose some ideas and thoughts of how viewpoints can be applied in Tango. These views were described in previous chapters and have examples in block schemes and in "interface" presentation to have thigh level overview.
+We propose some ideas and thoughts of how viewpoints can be applied in Tango. These views were described in previous chapters and have examples in block schemes and in "interface" presentation to have a high level overview. We also looked through the [EPICs](https://epics.anl.gov/) archtecture to find out and compare the ideas of its design to have a better feeling that we are on the right way.
+
+The essential question of CORBA existence in the Tango Controls core was reviewed.
 
 We hope that this design document will help to look at the Tango core from another point of view and will help to change the attitude to development and adding new features.
 
 Business goals and scenarios were not covered in details in this document.
 
-TODO написать, как новая архитектура повлияла на атрибуты, которые уже были (есть) в Танго 
-(например, все используют корбу, и не думают, что есть какие-то атрубуты в ней по умолчанию)
-и какие новые добавились и как это вообще всё взаимодействует.
+Overall, Tango Controls architecture is intended to satisfy most of important to the project quality attibutes. But design and implementation of existing Tango core library fails to meet some of the essential quality attributes. Therefore a number of refactorings should to be done in the future. Some of them were presented in the current version of this document and more are going to be in the next versions. For example, some part of the core library may become part of the protocol layer (e.g. heartbeat).
 
-In overall Tango Controls architecture is good. But design and implementation of existing Tango core library fails to meet some of the essential quality attributes. Therefore a number of refactorings have to be proposed. Few of them were presenten in the current version of this document and more are going to be in the future versions. For example, some part of the core library may become part of the protocol layer (e.g. heartbeat).
+
 
 ## Suggested roadmap
 
