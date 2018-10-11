@@ -16,7 +16,7 @@ Design sketch of Tango component and connectors separated by layers:
 
 **1 Tango Transport layer**
 
-Skeletal implementation resides in [org.tango.v10.transport](# src/main/java/org/tango/v10/transport) package
+Skeletal implementation resides in [org.tango.v10.transport](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/transport) package
 
 Tango Transport layer remarks:
 
@@ -30,7 +30,7 @@ Tango Transport layer implementation remarks:
 
 **2 Tango Protocol layer**
 
-Skeletal implementation resides in org.tango.v10.protocol package
+Skeletal implementation resides in [org.tango.v10.protocol](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/protocol) package
 
 We propose to design Tango protocol using block schemes as below and translate them in an API. If needed sequence diagrams can be used.
 
@@ -51,7 +51,7 @@ Tango Protocol layer implementation remarks:
 
 **3 Tango Interface layer**
 
-Skeletal implementation resides in org.tango.v10.service package  ("service" word is used as "interface" can not be used as package name)
+Skeletal implementation resides in [org.tango.v10.service](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/service) package  ("service" word is used as "interface" can not be used as package name)
 
 ```java
 
@@ -93,11 +93,11 @@ Tango Interface layer remarks:
 
 General purpose client library. Introduces even more high level API: AdminDevice; DataBase etc
 
-Skeletal implementation resides in org.tango.v10.client package
+Skeletal implementation resides in [org.tango.v10.client](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/client/event) package
 
-Skeletal implementation resides in org.tango.v10.server package
+Skeletal implementation resides in [org.tango.v10.server](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/server) package
 
-Skeletal implementation resides in org.tango.v10.api.client/server package
+Skeletal implementation resides in [org.tango.v10.api.client/server](https://github.com/Ingvord/tango-v10-design-doc/tree/master/src/main/java/org/tango/v10/api) package
 
 
 **5 Tango Compatibility layer**
