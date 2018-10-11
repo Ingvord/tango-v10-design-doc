@@ -4,7 +4,7 @@ To make our further discussions productive, we would like to define the key word
 
 If we look through the concepts of Tango we will probably draw the following scheme (taken from Project Tango-Python at LIONS, iramis - CEA):
 
-![](images/Tango_schema_by_others.png)
+![](images/Tango_schema_by_others.gif)
 
 And this is a high overview sketch of how we think the Tango elements connect with each other.
 
