@@ -1,4 +1,4 @@
-# Summary
+## Summary
                                                                                                    
 The main idea of this design document was to reveal drawbacks and benefits of the existing Tango core and to give 
 a first perspective of how to improve the pitfalls while maintaining the advantages.
@@ -21,7 +21,7 @@ TODO написать, как новая архитектура повлияла
 
 In overall Tango Controls architecture is good. But design and implementation of existing Tango core library fails to meet some of the essential quality attributes. Therefore a number of refactorings have to be proposed. Few of them were presenten in the current version of this document and more are going to be in the future versions. For example, some part of the core library may become part of the protocol layer (e.g. heartbeat).
 
-# Suggested roadmap
+## Suggested roadmap
 
 As the result of the code analysis and suggested changes the following roadmap can be foreseen:
 
