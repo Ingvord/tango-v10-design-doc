@@ -1,5 +1,21 @@
 site_name: Tango V10 Design Document
 repo_url: https://github.com/ingvord/tango-v10-design-doc
 pages:
-- Table of contents: index.md
+- Table of contents:
+  - Introduction: introduction.md
+  - Terminology: terminology.md
+  - Quality attributes: quality_attributes.md
+    - Overview: quality_attributes.md
+    - Maintainability: maintainability.md
+    - Reliability: reliability.md
+    - Fault tolerance: fault_tolerance.md
+    - Performance: performance.md
+    - Extendability: extendability.md
+    - Portability: portability.md
+    - Adaptability: adaptability.md
+  - Architecture: architecture.md
+  - Client side: client.md
+  - Server side: server.md
+  - Tango V10 design proposal: tango_v10.md
+  - Summary: summary.md
 theme: readthedocs
