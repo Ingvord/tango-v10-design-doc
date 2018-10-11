@@ -4,7 +4,7 @@ pages:
 - Table of contents:
   - Introduction: introduction.md
   - Terminology: terminology.md
-  - Quality attributes: quality_attributes.md
+  - Quality attributes:
     - Overview: quality_attributes.md
     - Maintainability: maintainability.md
     - Reliability: reliability.md
