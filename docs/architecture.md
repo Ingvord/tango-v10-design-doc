@@ -9,7 +9,7 @@ Below are the layers that should be designed and implemented in **Tango core lib
 
 Design sketch of Tango component and connectors separated by layers:
 
-![](images/Tango_as_CC.png)
+![](images/Tango_as_CandC.png)
 
 ---
 
