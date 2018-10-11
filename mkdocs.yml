@@ -1,8 +1,6 @@
 site_name: Tango V10 Design Document
 repo_url: https://github.com/ingvord/tango-v10-design-doc
-
+pages:
+- Table of contents: index.md
 theme: readthedocs
 #theme_dir: 'docs/_theme/tango-cs'
-
-nav:
-  - 'Table of contents': 'index.md'
