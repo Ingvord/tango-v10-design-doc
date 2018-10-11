@@ -2,7 +2,7 @@ site_name: Tango V10 Design Document
 repo_url: https://github.com/ingvord/tango-v10-design-doc
 pages:
 - Table of contents:
-  - Introduction: introduction.md
+  - Introduction: index.md
   - Terminology: terminology.md
   - Quality attributes:
     - Overview: quality_attributes.md
