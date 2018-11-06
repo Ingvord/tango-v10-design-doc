@@ -9,5 +9,5 @@ We prioritize the following attributes in Portability part:
 
 **Conclusions**
 
-There is an extencive work going in the community to implement these features: windows installer, packages for Linux. Device catalogue is a very good initiative to increase adaptability of Tango Controls.
+There is an extensive work going in the community to implement these features: windows installer, packages for Linux. Device catalogue is a very good initiative to increase adaptability of Tango Controls.
 
