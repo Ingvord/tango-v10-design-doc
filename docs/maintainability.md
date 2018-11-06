@@ -27,4 +27,4 @@ It is impossible to change underlying protocol - currently is bound to CORBA.
 
 **Conclusions**
 
-Either historically or intentionally architecture was adapted for adding new functionality (e.g. adding new attributes, commands). Nowadays when functionality is mature enough (it is hard to foreseen any major additions like event system or new polling mechanism), focus must be switched to changes, to the existing code base or to allowing quick fixes, performance improvements and most importantly to pluggability, so that users can implement their own changes in a centralized manner without changing core library.
+Either historically or intentionally architecture was adapted for adding new functionality (e.g. adding new attributes, commands). Nowadays when functionality is mature enough (it is hard to foresee any major additions like event system or new polling mechanism), focus must be switched to changes, to the existing code base or to allowing quick fixes, performance improvements and most importantly to pluggability, so that users can implement their own changes in a centralized manner without changing core library.
