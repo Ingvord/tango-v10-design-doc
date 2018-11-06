@@ -31,7 +31,7 @@ Below is a short list of the presence of particular attributes in Tango:
 
 - Write about CORBA. 
 - Perhaps, take parts of CORBA which are mostly used and put it into kernel (make some parts of CORBA be Tango Controls).
-- Which benifits are we going to have? Which consequence this decision will make to the whole Tango community?
+- Which benefits are we going to have? Which consequence this decision will make to the whole Tango community?
 - If it is decided to get rid of CORBA, what should be done? What influence will it have to Tango Controls?
 
 
