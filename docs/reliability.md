@@ -1,6 +1,6 @@
 ### Reliability in Tango Controls
 
-Tango Controls is a framework used in critical environments (non stop operations, minimal downtime, etc) therefore Tango kernel must foreseen errors, faults etc
+Tango Controls is a framework used in critical environments (non stop operations, minimal downtime, etc) therefore Tango kernel must foresee errors, faults etc
 
 We prioritize the following attributes in Reliability part:
 
@@ -19,4 +19,4 @@ The most important feature of reliability must be fault tolerance as Tango Contr
 
 **Conclusions**
 
-The above features currently missing from the Tango core libraries and typically are implemented on top of Tango by the users. We suggest to integrate these featuters into Tango core. This is especially handy because this can be done in the existing code base. For this a Tango protocol additions must be defined. See [Tango V10 section](tango_v10.md)
+The above features currently missing from the Tango core libraries and typically are implemented on top of Tango by the users. We suggest integrating these features into Tango core. This is especially handy because this can be done in the existing code base. For this a Tango protocol additions must be defined. See [Tango V10 section](tango_v10.md)
