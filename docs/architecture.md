@@ -34,7 +34,7 @@ Skeletal implementation resides in [org.tango.v10.protocol](https://github.com/I
 
 We propose to design Tango protocol using block schemes as below and translate them in an API. If needed sequence diagrams can be used.
 
-Block scheme where server recieves configuration form Tango Host:
+Block scheme where server receives configuration form Tango Host:
 
 ![](images/server_start_block_sch.png)
 
