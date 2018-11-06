@@ -1,6 +1,6 @@
 # Terminology and definitions
 
-To make our further discussions productive, we would like to define the key words from our point of view and show how we understand them. 
+To make our further discussions productive, we would like to define the keywords from our point of view and show how we understand them. 
 
 If we look through the concepts of Tango we will probably draw the following scheme (taken from Project Tango-Python at LIONS, iramis - CEA):
 
