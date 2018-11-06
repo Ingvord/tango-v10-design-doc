@@ -1,6 +1,6 @@
 ### Fault tolerance in Tango
 
-Tango inherits some of the properties from CORBA due to implementation as well as introduces new ones. Specifically:
+Tango inherits some properties from CORBA due to implementation as well as introduces new ones. Specifically:
 
 1) transparent reconnection
 
