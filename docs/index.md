@@ -2,6 +2,12 @@ https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 [TOC]
 
+# Authors
+
+Initially this document was created by Igor Khokhriakov aka [Ingvord](https://github.com/Ingvord) and Olga Merkulova aka [HelgaMond](https://github.com/HelgaMond).
+
+The full list of authors of this document can be found on this document's GitHub repository [Contributors page](https://github.com/tango-controls/tango-v10-design-doc/graphs/contributors).
+
 # Preface
 
 Writing this document appeared to be quite a challenging thing for us. This was not because we didn't know how to deal with the code. The main challenge was to express our ideas in the right way and to clearly understand how to merge our views with the views of Tango Controls needs and demands (to understand them correctly).
