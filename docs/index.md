@@ -75,14 +75,6 @@ Block schemes and diagrams are used to present information.
 We hope that the taken parts of the existing core library will make further discussions and analysis easier. 
 
 
-
-
-
-
-
-
-
-
 ## Mission of this document
 
 
@@ -97,7 +89,9 @@ The goal is to decrease time to market and lower integration and maintain costs 
 
 Finally, it will greatly improve flexibility by reducing design and system complexity.
 
+The initial phase of the creation of this document was funded by Tango Controls Collaboration in 2018 (funding reference is PO712608/WP3).
 
+This document is to be reviewed by Tango Controls Kernel developers/community members on Feb'4th 2019 during [Tango Kernel meeting](http://www.tango-controls.org/community/events/tango-kernel-meeting-doc-camp/). This will be the first time this document is presented to Tango Controls Kernel community members. As the result of the review a Tango V10 development roadmap must be shaped. 
 
 ## Business goal
 
