@@ -4,6 +4,7 @@ pages:
 - Table of contents:
   - Introduction: index.md
   - Terminology: terminology.md
+  - Events: events_in_tango.md
   - Quality attributes:
     - Overview: quality_attributes.md
     - Maintainability: maintainability.md
