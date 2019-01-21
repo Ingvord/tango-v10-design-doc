@@ -19,4 +19,5 @@ pages:
   - Server side: server.md
   - Tango V10 design proposal: tango_v10.md
   - Summary: summary.md
+  - References: references.md
 theme: readthedocs
