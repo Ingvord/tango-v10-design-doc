@@ -52,7 +52,7 @@ Here you can find an analysis of the existing code base related to the Tango Eve
 
 ## Event reconnect
 
-Reconnection happens in KeepAliveThread after receiving a heartbeat event.
+Reconnection happens in KeepAliveThread after having missed a heartbeat event.
 
 ![](images/Event_reconnect_event.png)
 
