@@ -1,3 +1,14 @@
+---
+title: Tango V10 Design Doc
+summary: Analysis and suggestions for Tango V10
+authors:
+    - Igor Khokhriakov
+    - Olga Merkulova
+date: 2019-01-22
+version: 0.9
+---
+
+
 https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 [TOC]
