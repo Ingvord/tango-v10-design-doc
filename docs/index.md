@@ -4,7 +4,7 @@ https://www.tutorialspoint.com/software_architecture_design/index.htm
 
 # Authors
 
-Initially this document was created by Igor Khokhriakov aka [Ingvord](https://github.com/Ingvord) and Olga Merkulova aka [HelgaMond](https://github.com/HelgaMond).
+Initially this document was created by software developers Igor Khokhriakov ([Ingvord](https://github.com/Ingvord) in GitHUb) and Olga Merkulova ([HelgaMond](https://github.com/HelgaMond) in GitHub) inspired by Tango Controls Collaboration. 
 
 The full list of authors of this document can be found on this document's GitHub repository [Contributors page](https://github.com/tango-controls/tango-v10-design-doc/graphs/contributors).
 
