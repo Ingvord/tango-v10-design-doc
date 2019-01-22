@@ -9,8 +9,6 @@ version: 0.9
 ---
 
 
-https://www.tutorialspoint.com/software_architecture_design/index.htm
-
 [TOC]
 
 # Authors
