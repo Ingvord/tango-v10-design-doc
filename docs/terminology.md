@@ -20,4 +20,4 @@ Each block is opened up as following:
 
 So talking about improvements and refactoring in this document we consider __only__ what is marked as "Core library".
 
-* Lorenzo: there is some uncertainty here using Kernel as a container including a number of fundamental components (3rd figure) and referencing the kernel code (4th figure)*
+_ Lorenzo: there is some uncertainty here using Kernel as a container including a number of fundamental components (3rd figure) and referencing the kernel code (4th figure) _

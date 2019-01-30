@@ -21,7 +21,7 @@ Command/Event Bus delegates each command/event to the command/event handler. Com
 Having this division will help us with performance, tuning and independent software development.
 For better understanding, please, refer to the ["What is CQRS" article](https://www.codeproject.com/Articles/555855/Introduction-to-CQRS).
 
-* Lorenzo: not sure I understand this point about CQRS. I mean, CQRS seems to be already in place in TANGO, with the separation between Commands and Attributes.*
+_ Lorenzo: not sure I understand this point about CQRS. I mean, CQRS seems to be already in place in TANGO, with the separation between Commands and Attributes. _
 
 Why use _Event Sourcing_ (meaning rebuilding of objects based on events)?
 
@@ -35,4 +35,4 @@ In this case our goal is to integrate event sourcing into Tango core form Tango 
 
 This pattern is not a silver bullet and can be implemented in Tango to solve just a part of the issues like introducing internal event bus and custom event handlers, that can be implemented as plugins rather than standalone Tango servers if CQRS pattern is implemented in Tango core.
 
-* Lorenzo: _Event Sourcing_ is worth some discussion. It is an interesting technique, but I'm not sure it is really relevant to TANGO, e.g. to a control system in general. Most of the time TANGO devices have to deal with real hardware, which means that the current state is to be determined by the actual values (readings). Moreover, if we think about settings, e.g. attribute writings, in principle these are not part of the state. So, I'm a bit confused as if attribute read/write gets included into the Event sourcing pattern it seems to me that it is contradicting the CQRS pattern... *
+_ Lorenzo: _Event Sourcing_ is worth some discussion. It is an interesting technique, but I'm not sure it is really relevant to TANGO, e.g. to a control system in general. Most of the time TANGO devices have to deal with real hardware, which means that the current state is to be determined by the actual values (readings). Moreover, if we think about settings, e.g. attribute writings, in principle these are not part of the state. So, I'm a bit confused as if attribute read/write gets included into the Event sourcing pattern it seems to me that it is contradicting the CQRS pattern... _

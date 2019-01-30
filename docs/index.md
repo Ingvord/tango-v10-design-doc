@@ -61,7 +61,7 @@ We also have in plan to extend the existing protocol. The following flowchart sh
 
 ![](images/UsersCode_toCoreLib.png)
 
-* Lorenzo: the figure, as proposed, is unclear; either requires some more explanation or better to be moved into a more detailed context. Moreover, it would be useful to have figure numbers and captions, for an easy and effective reference (would the rst figure directive work here?) *
+_ Lorenzo: the figure, as proposed, is unclear; either requires some more explanation or better to be moved into a more detailed context. Moreover, it would be useful to have figure numbers and captions, for an easy and effective reference (would the rst figure directive work here?) _
 
 
 
