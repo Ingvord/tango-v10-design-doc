@@ -17,6 +17,8 @@ The most important feature of reliability must be fault tolerance as Tango Contr
 3) minimal downtime.
 
 
+_ Lorenzo: this is a bit vague to be useful, and there is nothing about in V10 section. Moreover, not all these features are missing to me. Self monitoring is provided by the event subsystem hearbeat and the Starter service. The Satrter may provide self-recovering as well, if instructed to restart failed components. _
+
 **Conclusions**
 
 The above features currently missing from the Tango core libraries and typically are implemented on top of Tango by the users. We suggest integrating these features into Tango core. This is especially handy because this can be done in the existing code base. For this a Tango protocol additions must be defined. See [Tango V10 section](tango_v10.md)

@@ -6,6 +6,8 @@ We prioritize the following attributes in Portability part:
 - Installability (there must be packaging);
 - Adaptability (like device catalogue).
 
+_ Lorenzo: not sure I understand how device catalog facilitates adaptability _
+
 
 **Conclusions**
 

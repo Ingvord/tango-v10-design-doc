@@ -21,3 +21,5 @@ These features can be extended with:
 **Conclusions**
 
 Fault tolerance is already implemented quite well, but can be improved.
+
+_ Lorenzo: this section should be part of the previous, e.g. reliability _
