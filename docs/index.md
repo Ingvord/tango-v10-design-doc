@@ -8,6 +8,7 @@ date: 2019-01-22
 version: 0.9
 ---
 
+_ Lorenzo: general comment: all figures need a caption with figure number and a reading key _
 
 [TOC]
 
