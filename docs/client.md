@@ -6,6 +6,8 @@ Here you can find an analysis of the existing code base related to the Tango Eve
 
 ---
 
+_ Lorenzo: need caption and key for all figures. What are the arrows indicating? Use? Inheritance? (arrows inverted?) _
+
 ## Event System classes
 
 ![](images/EventSystem_classes_EventConsumer.png)

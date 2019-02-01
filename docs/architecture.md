@@ -13,7 +13,7 @@ Design sketch of Tango component and connectors separated by layers:
 
 _ Lorenzo: as depicted this is more like a module view rather than C&C. Moreover, I'm not sure I understand the separation highlighted into the ellipses on the left side: transport, protocol and interface they apply to both server and client...
 Also it would be useful to keep the color selection for each layer coherent with the first figure, e.fg. transport grey, protocol lilla, interface loght brown. Moreover, what the small transport box in the large transpost box means? I'd also move the third party components (e.g. CORBA, ZMQ, TCP/IP, UDP/IP) outside the TANGO transport box. 
-The bottom part of the figure should go into a separate one. _
+The bottom part of the figure should go into a separate one. Why is this showing TANGO transport? In the previous figure Pipe&Filter belong to TANGO Protocol layer. _
 
 ---
 
@@ -45,6 +45,8 @@ Block scheme where server receives configuration form Tango Host:
 Sequence diagram where server recieves configuration form Tango Host:
 ![](images/sequence_diagr_server_start.png)
 
+
+_ Lorenzo: always considering one of the strenghts of TANGO not doing broadcasts... Moreover, do we really want to copy EPICS? EPICS broadcast domain turned out to be an issue meny times. And it assumes a flat addressing space. _
 
 Tango Protocol layer implementation remarks:
 
