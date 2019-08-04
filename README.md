@@ -1,4 +1,4 @@
-> **ATTENTION**: this repository has been archivied. This is due to discussion of the Tango V10 design doc (this repo) that took place at [Tango Kernel meeting in Solaris, 2019](https://github.com/tango-controls/tango-kernel-followup/blob/master/2019-02-04/outcomes.md). The decision was to start Tango RFC initiative to specify Tango Controls V9 and V10 partially based on this document. The repository for Tango RFC project is [here](https://github.com/tango-controls/rfc)
+> **ATTENTION**: this repository has been archivied. This is due to the discussion of the Tango V10 design doc (this repo) that took place at [Tango Kernel meeting in Solaris, 2019](https://github.com/tango-controls/tango-kernel-followup/blob/master/2019-02-04/outcomes.md). The decision was to start Tango RFC initiative to specify Tango Controls V9 and V10 that is partially based on this document. The repository for Tango RFC project is [here](https://github.com/tango-controls/rfc)
 
 [![Documentation Status](https://readthedocs.org/projects/tango-v10-design-doc/badge/?version=latest)](http://tango-v10-design-doc.readthedocs.io/en/latest/?badge=latest)
 
